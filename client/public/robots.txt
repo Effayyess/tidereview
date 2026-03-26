@@ -1,0 +1,11 @@
+# robots.txt for TideReview.co.uk
+# Tide Bank Review — The Ultimate 2026 Guide
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.tidereview.co.uk/sitemap.xml
+
+# Crawl-delay (optional, be respectful to crawlers)
+Crawl-delay: 1

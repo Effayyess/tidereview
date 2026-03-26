@@ -84,6 +84,9 @@ export default function Footer() {
                 { label: "Business vs Personal Account", href: "/business-vs-personal" },
                 { label: "Setting Up a Limited Company", href: "/company-setup" },
                 { label: "Claim Your £200 Bonus", href: "/claim-offer" },
+                { label: "FAQ", href: "/faq" },
+                { label: "vs Competitors", href: "/compare" },
+                { label: "Blog", href: "/blog" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-sm text-slate-400 hover:text-emerald-400 transition-colors no-underline">

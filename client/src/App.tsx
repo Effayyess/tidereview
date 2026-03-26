@@ -23,6 +23,7 @@ import Features from "./pages/Features";
 import Compare from "./pages/Compare";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import FAQ from "./pages/FAQ";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/compare" component={() => <Layout><Compare /></Layout>} />
       <Route path="/blog" component={() => <Layout><Blog /></Layout>} />
       <Route path="/blog/:slug" component={() => <Layout><BlogPost /></Layout>} />
+      <Route path="/faq" component={() => <Layout><FAQ /></Layout>} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

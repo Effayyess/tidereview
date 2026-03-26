@@ -266,6 +266,258 @@ const articleContent: Record<string, React.ReactNode> = {
       <p>Tide's built-in accounting tools and integrations with Xero, QuickBooks, and FreeAgent make managing these obligations significantly easier.</p>
     </div>
   ),
+
+  "tide-vs-starling-bank-comparison": (
+    <div className="tide-prose">
+      <p>Tide and Starling Bank are two of the most popular digital business accounts in the UK, and choosing between them is one of the most common questions we receive. Both offer free basic accounts, slick mobile apps, and strong reputations — but they have meaningfully different strengths. This detailed comparison will help you decide which is right for your business.</p>
+
+      <h2>Overview: Tide vs Starling at a Glance</h2>
+      <div className="overflow-x-auto my-6">
+        <table className="w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead className="bg-slate-100">
+            <tr>
+              <th className="p-3 text-left font-semibold text-slate-700">Feature</th>
+              <th className="p-3 text-center font-semibold text-slate-700">Tide</th>
+              <th className="p-3 text-center font-semibold text-slate-700">Starling</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Monthly fee (basic)", "Free", "Free"],
+              ["Bank transfers", "5 free/month, then £0.20", "Unlimited free"],
+              ["Built-in invoicing", "✅ Yes", "❌ No"],
+              ["MTD VAT filing", "✅ Yes", "❌ No"],
+              ["Card reader", "✅ Yes (£159)", "❌ No"],
+              ["Savings account", "✅ 4% AER", "✅ 3.25% AER"],
+              ["Company registration", "✅ £24.99", "❌ No"],
+              ["FSCS protection", "✅ £120,000", "✅ £85,000"],
+              ["Trustpilot rating", "4.4/5 (32,000+ reviews)", "4.3/5 (40,000+ reviews)"],
+              ["Welcome offer", "✅ Up to £200 (REFER200)", "❌ None"],
+            ].map(([feature, tide, starling], i) => (
+              <tr key={feature} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                <td className="p-3 text-slate-600 font-medium">{feature}</td>
+                <td className="p-3 text-center text-slate-600">{tide}</td>
+                <td className="p-3 text-center text-slate-600">{starling}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Where Tide Wins</h2>
+      <p><strong>Business tools:</strong> Tide's built-in invoicing, expense tracking, and MTD VAT filing make it a far more complete business platform than Starling. For any business that needs to send invoices or file VAT returns, Tide eliminates the need for separate accounting software on basic tasks.</p>
+      <p><strong>Savings rate:</strong> Tide's Instant Saver pays up to 4% AER — significantly higher than Starling's 3.25% AER. For a business holding £50,000 in reserves, that's an extra £375 per year.</p>
+      <p><strong>Card reader:</strong> Tide offers a dedicated card reader for in-person payments. Starling has no equivalent product, meaning Starling customers must use a separate provider like Square or SumUp.</p>
+      <p><strong>Company registration:</strong> Tide allows you to register a limited company for just £24.99 as part of the account opening process. Starling offers no such service.</p>
+      <p><strong>Welcome offer:</strong> Tide's REFER200 offer gives new customers up to £200 free cash. Starling currently has no welcome offer for new business customers.</p>
+
+      <h2>Where Starling Wins</h2>
+      <p><strong>Free transfers:</strong> Starling offers unlimited free bank transfers on its free plan. Tide's free plan includes only 5 free transfers per month, with additional transfers costing £0.20 each. For businesses making more than 50 transfers per month who don't want to upgrade to a paid plan, Starling's free transfers are a genuine advantage.</p>
+      <p><strong>Fully licensed bank:</strong> Starling is a fully authorised UK bank, while Tide operates as an authorised e-money institution (though deposits are still FSCS-protected via ClearBank). Some businesses prefer the psychological comfort of banking with a fully licensed bank.</p>
+      <p><strong>Trustpilot review volume:</strong> Starling has over 40,000 Trustpilot reviews compared to Tide's 32,000+, suggesting a larger established customer base.</p>
+
+      <h2>Our Verdict: Tide vs Starling</h2>
+      <p>For the majority of UK small businesses — particularly those that need invoicing, VAT tools, or in-person payments — <strong>Tide is the better choice</strong>. The combination of built-in business tools, a higher savings rate, and the generous REFER200 welcome offer makes Tide the more complete package.</p>
+      <p>Starling is the better choice only if you make a very high volume of bank transfers and don't want to pay a monthly fee — in which case Starling's unlimited free transfers are a genuine advantage over Tide's free plan.</p>
+      <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 cta-primary px-5 py-2.5 rounded-xl font-bold no-underline text-sm">
+        Open a Tide Account with REFER200 →
+      </a>
+    </div>
+  ),
+
+  "tide-card-reader-review": (
+    <div className="tide-prose">
+      <p>If your business takes in-person payments, having a reliable, cost-effective card reader is essential. Tide launched its own card reader to give business customers a fully integrated payment solution — and it's one of the most compelling options available for UK small businesses. This review covers everything you need to know.</p>
+
+      <h2>The Two Tide Card Reader Models</h2>
+      <p>Tide offers two card reader models to suit different business needs:</p>
+      <ul className="list-disc pl-6 space-y-3 text-slate-600 mb-6">
+        <li><strong>Tide Card Reader (£159)</strong> — The standard model. Accepts chip and PIN, contactless, Apple Pay, and Google Pay. Compact design with all-day battery life. Perfect for most small businesses.</li>
+        <li><strong>Tide Card Reader Pro (£199)</strong> — Includes everything in the standard model plus a built-in receipt printer. Ideal for retail, hospitality, and any business where printed receipts are expected.</li>
+      </ul>
+
+      <h2>Transaction Fees</h2>
+      <p>Both card readers charge a transaction fee of <strong>1.5% per transaction</strong> on the Free and Plus plans. Pro and Max plan customers benefit from a reduced rate of <strong>1.25% per transaction</strong>. There are no monthly rental fees — you own the device outright.</p>
+      <p>For comparison: Square charges 1.75% per transaction, and SumUp charges 1.69%. Tide's rate of 1.5% (or 1.25% on paid plans) is competitive, particularly when combined with the seamless integration with your Tide business account.</p>
+
+      <h2>Key Features</h2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+        <li>Accepts Visa, Mastercard, American Express, Apple Pay, Google Pay, and Samsung Pay</li>
+        <li>Payments appear in your Tide account in real time</li>
+        <li>No separate merchant account needed — everything is managed through Tide</li>
+        <li>Works over WiFi and 4G (SIM card included)</li>
+        <li>All-day battery life (8+ hours of continuous use)</li>
+        <li>Tamper-proof, PCI DSS compliant</li>
+        <li>Manage all transactions in the Tide app alongside your bank account</li>
+      </ul>
+
+      <h2>How It Compares to Square and SumUp</h2>
+      <p>The key advantage of the Tide Card Reader over Square and SumUp is <strong>integration</strong>. Because Tide's card reader is built into the same platform as your business bank account, all payments flow directly into your Tide account in real time, with automatic reconciliation. With Square or SumUp, you need to manage a separate merchant account and manually reconcile payments.</p>
+      <p>For businesses that already use Tide as their primary business account, the card reader is the obvious choice. For businesses that don't yet have a Tide account, the card reader is an excellent reason to switch — especially with the REFER200 welcome offer providing up to £200 free cash.</p>
+
+      <h2>Our Verdict</h2>
+      <p>The Tide Card Reader is an excellent product for UK small businesses. Competitive transaction fees, seamless integration with your business account, and no monthly rental fees make it a compelling choice. The Pro model with built-in receipt printer is particularly good value for retail and hospitality businesses.</p>
+      <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 cta-primary px-5 py-2.5 rounded-xl font-bold no-underline text-sm">
+        Get a Tide Card Reader with REFER200 →
+      </a>
+    </div>
+  ),
+
+  "business-bank-account-for-contractors": (
+    <div className="tide-prose">
+      <p>Contractors and freelancers have specific business banking needs that differ from those of traditional businesses. You need an account that makes invoicing effortless, keeps your business and personal finances separate, handles irregular income, and minimises admin time — so you can focus on your work. In 2026, Tide is our top recommendation for UK contractors and freelancers.</p>
+
+      <h2>Why Contractors Need a Separate Business Account</h2>
+      <p>Many contractors and freelancers make the mistake of using their personal bank account for business transactions, at least when they're starting out. This creates several problems:</p>
+      <ul className="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+        <li><strong>Tax complications:</strong> Mixing personal and business transactions makes it significantly harder to calculate your taxable income and allowable expenses</li>
+        <li><strong>Professionalism:</strong> Clients paying into a personal account may question your credibility</li>
+        <li><strong>Limited company requirement:</strong> If you operate through a limited company, you are legally required to have a separate business bank account</li>
+        <li><strong>MTD compliance:</strong> Making Tax Digital requires digital records of business transactions — much easier with a dedicated business account</li>
+      </ul>
+
+      <h2>Why Tide is Perfect for Contractors</h2>
+      <p><strong>Instant invoicing:</strong> Create and send professional invoices directly from the Tide app. Set up automatic payment reminders for overdue invoices. Track which invoices have been paid and which are outstanding — all in one place.</p>
+      <p><strong>Expense tracking:</strong> Photograph receipts in the app and categorise expenses automatically. At tax time, your accountant will have everything they need without hours of manual data entry.</p>
+      <p><strong>MTD compliance:</strong> Tide's HMRC-recognised accounting tools make it straightforward to maintain the digital records required by Making Tax Digital for Income Tax Self Assessment (MTD ITSA), which affects sole traders earning over £50,000 from April 2026.</p>
+      <p><strong>Instant Saver:</strong> Contractors often receive large, irregular payments. Tide's Instant Saver account, earning up to 4% AER, is the ideal place to park money set aside for tax bills — earning interest while remaining instantly accessible.</p>
+      <p><strong>Free basic account:</strong> Many contractors don't need unlimited bank transfers. Tide's free plan, with 5 free transfers per month, is sufficient for most freelancers — and there's no monthly fee.</p>
+
+      <h2>Tide for Limited Company Contractors</h2>
+      <p>If you operate through a personal service company (PSC) or limited company, Tide is particularly compelling. You can register your limited company through Tide for just £24.99, open your business account at the same time, and use Tide's accounting integrations with Xero or FreeAgent to manage your IR35 compliance and dividend payments.</p>
+
+      <h2>The REFER200 Welcome Offer</h2>
+      <p>New Tide customers can claim up to <strong>£200 free cash</strong> using referral code <strong>REFER200</strong>. Spend £100 in your first 30 days to receive £75, then spend a further £500 within 90 days to receive an additional £125. For most contractors, meeting these milestones is trivially easy.</p>
+      <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 cta-primary px-5 py-2.5 rounded-xl font-bold no-underline text-sm">
+        Open a Tide Account with REFER200 →
+      </a>
+    </div>
+  ),
+
+  "how-to-file-vat-return-tide": (
+    <div className="tide-prose">
+      <p>Filing your VAT return used to mean logging into the HMRC portal, manually entering figures, and hoping you hadn't made any mistakes. With Tide's built-in Making Tax Digital (MTD) tools, the process is dramatically simpler. This step-by-step guide walks you through filing your VAT return directly from your Tide account.</p>
+
+      <h2>Before You Start: VAT Registration</h2>
+      <p>To file VAT returns through Tide, you must first be VAT-registered with HMRC. VAT registration is mandatory if your taxable turnover exceeds <strong>£90,000</strong> in any 12-month period. You can also register voluntarily below this threshold, which can be beneficial if your customers are VAT-registered businesses (as they can reclaim the VAT you charge).</p>
+
+      <h2>Step 1: Connect Tide to HMRC</h2>
+      <p>To file VAT returns through Tide, you need to connect your Tide account to HMRC's Making Tax Digital service:</p>
+      <ol className="list-decimal pl-6 space-y-2 text-slate-600 mb-6">
+        <li>Open the Tide app and navigate to <strong>Accounting &gt; VAT</strong></li>
+        <li>Select <strong>Connect to HMRC</strong></li>
+        <li>You'll be redirected to the HMRC Government Gateway login page</li>
+        <li>Log in with your Government Gateway credentials</li>
+        <li>Authorise Tide to access your VAT records</li>
+        <li>You'll be redirected back to Tide — the connection is now active</li>
+      </ol>
+      <p>This connection only needs to be set up once. Tide will remember your HMRC authorisation for future returns.</p>
+
+      <h2>Step 2: Categorise Your Transactions</h2>
+      <p>Tide automatically categorises many transactions, but you should review and confirm the VAT treatment of each transaction before filing:</p>
+      <ul className="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+        <li><strong>Standard rate (20%):</strong> Most goods and services</li>
+        <li><strong>Reduced rate (5%):</strong> Energy bills, children's car seats, etc.</li>
+        <li><strong>Zero rate (0%):</strong> Food, books, children's clothing, etc.</li>
+        <li><strong>Exempt:</strong> Insurance, postage stamps, financial services</li>
+        <li><strong>Outside the scope:</strong> Wages, PAYE, loan repayments</li>
+      </ul>
+
+      <h2>Step 3: Review Your VAT Return</h2>
+      <p>Once your transactions are categorised, Tide automatically calculates your VAT return figures:</p>
+      <ul className="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+        <li><strong>Box 1:</strong> VAT due on sales and other outputs</li>
+        <li><strong>Box 4:</strong> VAT reclaimed on purchases and other inputs</li>
+        <li><strong>Box 5:</strong> Net VAT to pay or reclaim</li>
+        <li><strong>Boxes 6-9:</strong> Total value of sales, purchases, and EC transactions</li>
+      </ul>
+      <p>Review each figure carefully before submitting. If anything looks incorrect, go back and check your transaction categorisations.</p>
+
+      <h2>Step 4: Submit Your Return</h2>
+      <p>Once you're satisfied that your return is correct:</p>
+      <ol className="list-decimal pl-6 space-y-2 text-slate-600 mb-6">
+        <li>Tap <strong>Submit VAT Return</strong> in the Tide app</li>
+        <li>Confirm the figures and tap <strong>Submit to HMRC</strong></li>
+        <li>Tide submits the return directly to HMRC via the MTD API</li>
+        <li>You'll receive a confirmation reference number from HMRC</li>
+      </ol>
+      <p>Your VAT return is now filed. If you owe VAT, you'll need to pay HMRC separately by the payment deadline (usually one calendar month and seven days after the end of your VAT period).</p>
+
+      <h2>Tips for Smooth VAT Filing</h2>
+      <ul className="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+        <li>Categorise transactions regularly throughout the quarter, not just at filing time</li>
+        <li>Photograph and attach receipts for all business purchases in the Tide app</li>
+        <li>Set a calendar reminder for your VAT filing deadline</li>
+        <li>Consider connecting Tide to Xero or QuickBooks for more advanced VAT reporting</li>
+      </ul>
+    </div>
+  ),
+
+  "tide-savings-account-review": (
+    <div className="tide-prose">
+      <p>One of the most underrated features of Tide's business banking platform is its <strong>Instant Saver account</strong>, which currently pays up to <strong>4% AER (variable)</strong> on balances up to £75,000. For businesses that hold significant cash reserves, this can generate thousands of pounds in interest income each year — while keeping the money instantly accessible.</p>
+
+      <h2>What is the Tide Instant Saver?</h2>
+      <p>The Tide Instant Saver is a separate savings pot within your Tide business account. You can transfer money in and out instantly, with no notice period and no penalties for withdrawals. Interest is calculated daily and paid monthly directly into your Instant Saver balance.</p>
+
+      <h2>Current Interest Rate</h2>
+      <p>The Tide Instant Saver currently pays <strong>4% AER (variable)</strong> on balances up to <strong>£75,000</strong>. This is the most competitive rate currently offered by any of the major UK digital business banks:</p>
+      <div className="overflow-x-auto my-6">
+        <table className="w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead className="bg-slate-100">
+            <tr>
+              <th className="p-3 text-left font-semibold text-slate-700">Provider</th>
+              <th className="p-3 text-center font-semibold text-slate-700">Rate (AER)</th>
+              <th className="p-3 text-center font-semibold text-slate-700">Max Balance</th>
+              <th className="p-3 text-center font-semibold text-slate-700">Notice Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Tide Instant Saver", "4.00%", "£75,000", "None"],
+              ["Starling Business", "3.25%", "£1,000,000", "None"],
+              ["Monzo Business", "1.60%", "£100,000", "None"],
+              ["Revolut Business", "2.61%", "Varies", "None"],
+            ].map(([provider, rate, max, notice], i) => (
+              <tr key={provider} className={i === 0 ? 'bg-emerald-50' : i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                <td className={`p-3 font-medium ${i === 0 ? 'text-emerald-700' : 'text-slate-600'}`}>{provider}</td>
+                <td className={`p-3 text-center font-bold ${i === 0 ? 'text-emerald-700' : 'text-slate-600'}`}>{rate}</td>
+                <td className="p-3 text-center text-slate-600">{max}</td>
+                <td className="p-3 text-center text-slate-600">{notice}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-xs text-slate-400 mb-6">Rates correct as of March 2026. Variable rates are subject to change.</p>
+
+      <h2>How Much Could You Earn?</h2>
+      <p>At 4% AER, the interest on various balances over one year would be:</p>
+      <ul className="list-disc pl-6 space-y-2 text-slate-600 mb-6">
+        <li><strong>£10,000 balance:</strong> ~£400 per year</li>
+        <li><strong>£25,000 balance:</strong> ~£1,000 per year</li>
+        <li><strong>£50,000 balance:</strong> ~£2,000 per year</li>
+        <li><strong>£75,000 balance (maximum):</strong> ~£3,000 per year</li>
+      </ul>
+      <p>For businesses that routinely hold cash reserves for tax bills, VAT payments, or working capital, the Tide Instant Saver is an easy way to generate meaningful passive income.</p>
+
+      <h2>How to Open a Tide Instant Saver</h2>
+      <p>The Instant Saver is available to all Tide business account holders, including those on the free plan. To open one:</p>
+      <ol className="list-decimal pl-6 space-y-2 text-slate-600 mb-6">
+        <li>Open the Tide app</li>
+        <li>Navigate to <strong>Savings</strong> in the main menu</li>
+        <li>Select <strong>Instant Saver</strong> and tap <strong>Open account</strong></li>
+        <li>Transfer your desired amount from your main Tide account</li>
+      </ol>
+      <p>The process takes less than a minute. Your money starts earning interest immediately.</p>
+
+      <h2>Is the Tide Instant Saver Safe?</h2>
+      <p>Yes. Money held in the Tide Instant Saver is covered by the same FSCS protection as your main Tide account — up to <strong>£120,000</strong> via ClearBank. This is higher than the standard £85,000 FSCS limit, making it one of the most protected business savings options available.</p>
+      <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 cta-primary px-5 py-2.5 rounded-xl font-bold no-underline text-sm">
+        Open a Tide Account with REFER200 →
+      </a>
+    </div>
+  ),
 };
 
 export default function BlogPost() {

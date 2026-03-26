@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   {
     label: "Features", href: "/features", dropdown: [
+      { label: "All Features", href: "/features" },
       { label: "Invoicing", href: "/invoicing" },
       { label: "Accounting & VAT", href: "/accounting" },
       { label: "Card Reader", href: "/card-reader" },
@@ -17,14 +18,20 @@ const navLinks = [
   },
   { label: "Pricing", href: "/pricing" },
   { label: "vs Competitors", href: "/compare" },
-  { label: "Business Guide", href: "/business-vs-personal" },
+  {
+    label: "Business Guide", href: "/business-vs-personal", dropdown: [
+      { label: "Business vs Personal", href: "/business-vs-personal" },
+      { label: "Company Setup", href: "/company-setup" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
   { label: "Reviews", href: "/reviews" },
   { label: "Blog", href: "/blog" },
 ];
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [featuresOpen, setFeaturesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [location] = useLocation();
 
   return (
@@ -45,29 +52,30 @@ export default function Navigation() {
           <nav className="hidden xl:flex items-center gap-0.5 flex-1 justify-center">
             {navLinks.map((link) =>
               link.dropdown ? (
-                <div key={link.label} className="relative group">
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
                   <button
                     className="flex items-center gap-1 px-2.5 py-1.5 text-xs text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-all whitespace-nowrap"
                     style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}
-                    onMouseEnter={() => setFeaturesOpen(true)}
-                    onMouseLeave={() => setFeaturesOpen(false)}
                   >
                     {link.label}
                     <ChevronDown className="w-3 h-3" />
                   </button>
                   <div
-                    className="absolute top-full left-0 mt-1 w-48 rounded-xl shadow-2xl overflow-hidden"
+                    className="absolute top-full left-0 mt-1 w-52 rounded-xl shadow-2xl overflow-hidden"
                     style={{
                       background: 'oklch(0.18 0.06 262)',
                       border: '1px solid oklch(0.32 0.10 262)',
-                      opacity: featuresOpen ? 1 : 0,
-                      pointerEvents: featuresOpen ? 'auto' : 'none',
-                      transform: featuresOpen ? 'translateY(0)' : 'translateY(-6px)',
+                      opacity: openDropdown === link.label ? 1 : 0,
+                      pointerEvents: openDropdown === link.label ? 'auto' : 'none',
+                      transform: openDropdown === link.label ? 'translateY(0)' : 'translateY(-6px)',
                       transition: 'all 0.15s ease',
                       zIndex: 100,
                     }}
-                    onMouseEnter={() => setFeaturesOpen(true)}
-                    onMouseLeave={() => setFeaturesOpen(false)}
                   >
                     {link.dropdown.map((item) => (
                       <Link
@@ -75,6 +83,7 @@ export default function Navigation() {
                         href={item.href}
                         className="block px-4 py-2.5 text-xs text-slate-200 hover:text-white hover:bg-white/10 transition-colors no-underline"
                         style={{ fontFamily: 'DM Sans, sans-serif' }}
+                        onClick={() => setOpenDropdown(null)}
                       >
                         {item.label}
                       </Link>
