@@ -2,6 +2,7 @@
 import { Link } from "wouter";
 import { FileText, Calculator, CreditCard, TrendingUp, Users, Building2, ChevronRight, Smartphone, Globe, Shield } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
@@ -55,6 +56,7 @@ export default function Features() {
           </p>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Features & Tools"}]} />
 
       {/* Feature Groups */}
       <section className="py-16 bg-white">

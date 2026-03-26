@@ -2,6 +2,7 @@
 // SEO: "Tide accounting review", "Tide VAT support", "Tide Making Tax Digital"
 import { CheckCircle, Star, Calculator, Receipt, BarChart3, FileCheck } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const ACCOUNTING_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-accounting-oE5vVu49o7N2q8kZWWiL8K.webp";
@@ -24,6 +25,7 @@ export default function Accounting() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Features", href: "/features"}, {label: "Accounting & VAT Review"}]} />
 
       {/* Score Bar */}
       <section className="py-6 bg-white border-b border-slate-100">

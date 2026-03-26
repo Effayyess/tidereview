@@ -2,6 +2,7 @@
 // SEO: "Tide pricing", "Tide business account plans"
 import { CheckCircle, XCircle, Star } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
@@ -127,6 +128,7 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Pricing & Plans"}]} />
 
       {/* Plans Grid */}
       <section className="py-16 bg-white">

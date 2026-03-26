@@ -2,6 +2,7 @@
 // SEO: "Tide vs Starling", "Tide vs Monzo Business", "best UK business bank account 2026"
 import { CheckCircle, XCircle, Minus, Star, Trophy } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
@@ -101,6 +102,7 @@ export default function Compare() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Tide vs Competitors"}]} />
 
       {/* Overall Scores */}
       <section className="py-12 bg-white">

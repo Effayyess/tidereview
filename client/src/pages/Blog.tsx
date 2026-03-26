@@ -2,6 +2,7 @@
 // SEO: "Tide bank blog", "UK business banking tips", "small business finance UK"
 import { Link } from "wouter";
 import { Calendar, Clock, ChevronRight, Tag } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const blogPosts = [
   {
@@ -123,6 +124,7 @@ export default function Blog() {
           </p>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Blog"}]} />
 
       {/* Featured Post */}
       <section className="py-12 bg-white">

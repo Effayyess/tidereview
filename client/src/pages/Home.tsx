@@ -6,7 +6,7 @@ import { CheckCircle, XCircle, Star, Shield, Zap, Users, TrendingUp, CreditCard,
 import ReferralBanner from "@/components/ReferralBanner";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-card_b701c5a8.png";
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-hero-hand_acd7411e.webp";
 const MOBILE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-mobile-app-VNtjRaibWhjzEYsaepd7Bv.webp";
 
 const pros = [
@@ -134,25 +134,21 @@ export default function Home() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative hidden lg:flex items-center justify-center">
-              {/* Glow backdrop for card */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div style={{ width: '320px', height: '420px', background: 'radial-gradient(ellipse at center, oklch(0.55 0.25 262) 0%, transparent 70%)', filter: 'blur(40px)', opacity: 0.5 }} />
-              </div>
-              {/* Card image — portrait, centred, with drop shadow */}
-              <div className="relative z-10" style={{ filter: 'drop-shadow(0 32px 64px rgba(0,0,0,0.5))' }}>
+            <div className="relative hidden lg:block">
+              {/* Hero photo — full cover, rounded */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl" style={{ height: '520px' }}>
                 <img
                   src={HERO_IMG}
-                  alt="Tide Mastercard business debit card"
-                  className="w-auto"
-                  style={{ maxHeight: '460px', maxWidth: '340px', borderRadius: '20px' }}
+                  alt="Hand holding Tide Mastercard business debit card"
+                  className="w-full h-full object-cover object-center"
                 />
+                {/* subtle dark vignette at bottom so badge is readable */}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)' }} />
               </div>
-              {/* Floating Trust Badge */}
-              <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-xl p-3 flex items-center gap-3 z-20">
+              {/* Floating Trustpilot Badge — overlapping bottom-left */}
+              <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3 z-20">
                 <div className="flex">
-                  {[1,2,3,4].map(i => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
-                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
                 <div>
                   <p className="text-slate-800 font-bold text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>4.4 Excellent</p>

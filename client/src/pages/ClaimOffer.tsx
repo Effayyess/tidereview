@@ -1,6 +1,7 @@
 // Claim Offer Page: How to Claim Your £200 Tide Referral Bonus
 // SEO: "Tide referral code REFER200", "Tide £200 free cash", "Tide promo code"
 import { CheckCircle, Gift, Clock, CreditCard, TrendingUp, AlertCircle } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
@@ -46,6 +47,7 @@ export default function ClaimOffer() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Claim REFER200 Offer"}]} />
 
       {/* How the Offer Works */}
       <section className="py-16 bg-white">

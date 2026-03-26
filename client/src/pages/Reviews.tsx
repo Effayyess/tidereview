@@ -2,6 +2,7 @@
 // SEO: "Tide bank reviews", "Tide Trustpilot", "Tide customer reviews"
 import { Star, ThumbsUp, ThumbsDown, Quote } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const TRUSTPILOT_URL = "https://uk.trustpilot.com/review/tide.co";
@@ -94,6 +95,7 @@ export default function Reviews() {
           </p>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Customer Reviews"}]} />
 
       {/* Trustpilot Overview */}
       <section className="py-12 bg-white">

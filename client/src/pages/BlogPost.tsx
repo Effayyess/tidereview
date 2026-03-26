@@ -4,6 +4,7 @@ import { Link, useParams } from "wouter";
 import { Calendar, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { blogPosts } from "./Blog";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
@@ -559,6 +560,7 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Blog", href: "/blog"}, {label: post.title}]} />
 
       {/* Hero Image */}
       <div className="w-full max-w-3xl mx-auto -mt-0">

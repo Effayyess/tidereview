@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
 import { Link } from "wouter";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
@@ -279,6 +280,7 @@ export default function FAQ() {
           </p>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Frequently Asked Questions"}]} />
 
       {/* FAQ Content */}
       <section className="py-14 bg-white">

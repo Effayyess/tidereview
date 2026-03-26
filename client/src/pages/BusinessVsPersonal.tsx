@@ -2,6 +2,7 @@
 // SEO: "business bank account vs personal", "do I need a business bank account UK"
 import { CheckCircle, XCircle, AlertTriangle, Building2, User } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-hero-g3S6sJ5gBV4g64vsBa75fh.webp";
@@ -63,6 +64,7 @@ export default function BusinessVsPersonal() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Business Guide", href: "/business-vs-personal"}, {label: "Business vs Personal Account"}]} />
 
       {/* Quick Comparison */}
       <section className="py-12 bg-white">

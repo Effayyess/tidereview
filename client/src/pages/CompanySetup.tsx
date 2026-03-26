@@ -2,6 +2,7 @@
 // SEO: "Tide company formation", "register limited company UK", "Tide company registration review"
 import { CheckCircle, Building2, Clock, FileCheck, Shield, ChevronRight } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const COMPANY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-company-setup-KqtchMr3TvS9Zdb7AL59TL.webp";
@@ -89,6 +90,7 @@ export default function CompanySetup() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Business Guide", href: "/company-setup"}, {label: "Company Formation Guide"}]} />
 
       {/* Why Form a Limited Company */}
       <section className="py-16 bg-white">

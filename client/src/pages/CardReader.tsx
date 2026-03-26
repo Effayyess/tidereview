@@ -2,6 +2,7 @@
 // SEO: "Tide card reader review", "Tide card reader price"
 import { CheckCircle, Star, Wifi, Battery, CreditCard, Smartphone } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const CARD_READER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-card-reader-jTQenuTUabqA32PEtMdt3i.webp";
@@ -44,6 +45,7 @@ export default function CardReader() {
           </div>
         </div>
       </section>
+      <Breadcrumb items={[{label: "Features", href: "/features"}, {label: "Card Reader Review"}]} />
 
       {/* Score Bar */}
       <section className="py-6 bg-white border-b border-slate-100">
