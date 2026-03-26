@@ -4,32 +4,56 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import FloatingCTA from "./components/FloatingCTA";
 
+// Pages
+import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
+import Invoicing from "./pages/Invoicing";
+import Accounting from "./pages/Accounting";
+import CardReader from "./pages/CardReader";
+import BusinessVsPersonal from "./pages/BusinessVsPersonal";
+import CompanySetup from "./pages/CompanySetup";
+import Reviews from "./pages/Reviews";
+import ClaimOffer from "./pages/ClaimOffer";
+import Features from "./pages/Features";
+
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navigation />
+      <main className="flex-1">{children}</main>
+      <Footer />
+      <FloatingCTA />
+    </div>
+  );
+}
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={() => <Layout><Home /></Layout>} />
+      <Route path="/pricing" component={() => <Layout><Pricing /></Layout>} />
+      <Route path="/features" component={() => <Layout><Features /></Layout>} />
+      <Route path="/invoicing" component={() => <Layout><Invoicing /></Layout>} />
+      <Route path="/accounting" component={() => <Layout><Accounting /></Layout>} />
+      <Route path="/card-reader" component={() => <Layout><CardReader /></Layout>} />
+      <Route path="/business-vs-personal" component={() => <Layout><BusinessVsPersonal /></Layout>} />
+      <Route path="/company-setup" component={() => <Layout><CompanySetup /></Layout>} />
+      <Route path="/reviews" component={() => <Layout><Reviews /></Layout>} />
+      <Route path="/claim-offer" component={() => <Layout><ClaimOffer /></Layout>} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
