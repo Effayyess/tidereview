@@ -102,132 +102,157 @@ export default function Home() {
           }}
         />
 
-        <div className="container relative pt-10 pb-12 lg:py-24">
-          {/* Two-column on lg+, single column on mobile */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="container relative pt-8 pb-10 lg:py-24">
 
-            {/* ── LEFT: copy ── */}
-            <div className="order-1">
-              <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wider">
+          {/* ── MOBILE layout: stacked ── */}
+          <div className="lg:hidden">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+              ⭐ Updated March 2026
+            </div>
+
+            {/* Headline */}
+            <h1
+              className="text-3xl sm:text-4xl font-black text-white leading-tight mb-4"
+              style={{ fontFamily: "Sora, sans-serif", wordBreak: "break-word", overflowWrap: "break-word" }}
+            >
+              The Ultimate{" "}
+              <span className="text-emerald-400">Tide Bank</span>{" "}
+              Review 2026
+            </h1>
+
+            <p className="text-slate-300 text-sm leading-relaxed mb-5">
+              Everything you need to know about Tide's business banking platform — from features and pricing to real customer reviews. Use our exclusive referral code to claim up to{" "}
+              <strong className="text-white">£200 free cash</strong>.
+            </p>
+
+            {/* Hero image — full width on mobile */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full mb-5" style={{ height: "220px" }}>
+              <img
+                src={HERO_IMG}
+                alt="Hand holding Tide Mastercard business debit card"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)" }} />
+              {/* Trustpilot badge on mobile image */}
+              <div className="absolute bottom-3 left-3 bg-white rounded-xl shadow-xl px-3 py-2 flex items-center gap-2 z-20">
+                <div className="flex items-center gap-0.5">
+                  {[1,2,3,4].map((i) => <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />)}
+                  <svg width="12" height="12" viewBox="0 0 24 24" className="flex-shrink-0">
+                    <defs><clipPath id="star-m"><rect x="0" y="0" width="9.6" height="24" /></clipPath></defs>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#d1d5db" />
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#fbbf24" clipPath="url(#star-m)" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-slate-800 font-bold text-xs" style={{ fontFamily: "Sora, sans-serif" }}>4.4 Excellent</p>
+                  <p className="text-slate-500 text-xs">32k+ reviews</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Referral Code Box */}
+            <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 mb-5">
+              <p className="text-slate-300 text-xs mb-2">🎁 Exclusive Referral Code — Limited Time Offer</p>
+              <p className="text-white font-mono font-black text-2xl tracking-widest mb-1">REFER200</p>
+              <p className="text-emerald-400 text-xs mb-3">Up to £200 free cash when you sign up</p>
+              <a
+                href={REFERRAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-primary block w-full px-4 py-3 rounded-xl font-bold no-underline text-sm text-center"
+              >
+                Claim £200 Free →
+              </a>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-4 gap-2">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-white font-black text-sm" style={{ fontFamily: "Sora, sans-serif" }}>{stat.value}</p>
+                  <p className="text-slate-400 text-xs leading-tight">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── DESKTOP layout: side by side ── */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wider">
                 ⭐ Updated March 2026
               </div>
-
               <h1
-                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight mb-5"
+                className="text-5xl xl:text-6xl font-black text-white leading-tight mb-6"
                 style={{ fontFamily: "Sora, sans-serif" }}
               >
                 The Ultimate<br />
                 <span className="text-emerald-400">Tide Bank</span><br />
                 Review 2026
               </h1>
-
-              <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+              <p className="text-slate-300 text-lg leading-relaxed mb-8">
                 Everything you need to know about Tide's business banking platform — from features and pricing to real customer reviews. Plus, use our exclusive referral code to claim up to{" "}
                 <strong className="text-white">£200 free cash</strong>.
               </p>
-
-              {/* Referral Code Box — stacks on mobile */}
-              <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-4 sm:p-5 mb-6">
-                <p className="text-slate-300 text-xs sm:text-sm mb-3">
-                  🎁 Exclusive Referral Code — Limited Time Offer
-                </p>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              {/* Referral Code Box */}
+              <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-5 mb-8">
+                <p className="text-slate-300 text-sm mb-3">🎁 Exclusive Referral Code — Limited Time Offer</p>
+                <div className="flex items-center justify-between gap-4">
                   <div>
-                    <p
-                      className="text-white font-mono font-black text-2xl sm:text-3xl tracking-widest"
-                    >
-                      REFER200
-                    </p>
-                    <p className="text-emerald-400 text-xs sm:text-sm mt-1">
-                      Up to £200 free cash when you sign up
-                    </p>
+                    <p className="text-white font-mono font-black text-3xl tracking-widest">REFER200</p>
+                    <p className="text-emerald-400 text-sm mt-1">Up to £200 free cash when you sign up</p>
                   </div>
                   <a
                     href={REFERRAL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cta-primary px-5 py-3 rounded-xl font-bold no-underline text-sm whitespace-nowrap text-center sm:flex-shrink-0"
+                    className="cta-primary px-6 py-3 rounded-xl font-bold no-underline text-sm whitespace-nowrap flex-shrink-0"
                   >
                     Claim £200 Free →
                   </a>
                 </div>
               </div>
-
-              {/* Quick Stats — 4 cols, smaller text on mobile */}
-              <div className="grid grid-cols-4 gap-2 sm:gap-3">
+              {/* Quick Stats */}
+              <div className="grid grid-cols-4 gap-3">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <p
-                      className="text-white font-black text-base sm:text-xl"
-                      style={{ fontFamily: "Sora, sans-serif" }}
-                    >
-                      {stat.value}
-                    </p>
-                    <p className="text-slate-400 text-xs leading-tight">{stat.label}</p>
+                    <p className="text-white font-black text-xl" style={{ fontFamily: "Sora, sans-serif" }}>{stat.value}</p>
+                    <p className="text-slate-400 text-xs">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* ── RIGHT: hero image ── visible on ALL screen sizes */}
-            <div className="order-2 relative">
-              {/* On mobile: shorter fixed height; on lg: taller */}
-              <div
-                className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl w-full"
-                style={{ height: "280px", maxHeight: "520px" }}
-              >
+            {/* Right: hero image — full 520px on desktop */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl" style={{ height: "520px" }}>
                 <img
                   src={HERO_IMG}
                   alt="Hand holding Tide Mastercard business debit card"
                   className="w-full h-full object-cover object-center"
-                  style={{ height: "100%" }}
                 />
-                {/* vignette */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)",
-                  }}
-                />
+                <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)" }} />
               </div>
-
-              {/* Trustpilot badge — overlapping bottom-left */}
-              <div className="absolute bottom-3 left-3 sm:bottom-5 sm:left-5 bg-white rounded-xl shadow-xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 sm:gap-3 z-20">
+              {/* Trustpilot badge */}
+              <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3 z-20">
                 <div className="flex items-center gap-0.5">
-                  {[1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
-                  ))}
-                  {/* 5th star: 40% gold */}
-                  <svg width="12" height="12" viewBox="0 0 24 24" className="flex-shrink-0 sm:hidden">
-                    <defs>
-                      <clipPath id="star-fill-40-sm">
-                        <rect x="0" y="0" width="9.6" height="24" />
-                      </clipPath>
-                    </defs>
+                  {[1,2,3,4].map((i) => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                  <svg width="16" height="16" viewBox="0 0 24 24" className="flex-shrink-0">
+                    <defs><clipPath id="star-d"><rect x="0" y="0" width="9.6" height="24" /></clipPath></defs>
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#d1d5db" />
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#fbbf24" clipPath="url(#star-fill-40-sm)" />
-                  </svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" className="flex-shrink-0 hidden sm:block">
-                    <defs>
-                      <clipPath id="star-fill-40">
-                        <rect x="0" y="0" width="9.6" height="24" />
-                      </clipPath>
-                    </defs>
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#d1d5db" />
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#fbbf24" clipPath="url(#star-fill-40)" />
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#fbbf24" clipPath="url(#star-d)" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-slate-800 font-bold text-xs sm:text-sm" style={{ fontFamily: "Sora, sans-serif" }}>
-                    4.4 Excellent
-                  </p>
-                  <p className="text-slate-500 text-xs hidden sm:block">32,660 Trustpilot reviews</p>
-                  <p className="text-slate-500 text-xs sm:hidden">32k+ reviews</p>
+                  <p className="text-slate-800 font-bold text-sm" style={{ fontFamily: "Sora, sans-serif" }}>4.4 Excellent</p>
+                  <p className="text-slate-500 text-xs">32,660 Trustpilot reviews</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -485,12 +510,12 @@ export default function Home() {
               </div>
 
               {/* App screenshot — visible on ALL sizes */}
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center mt-6 md:mt-0">
                 <img
                   src={MOBILE_IMG}
                   alt="Tide mobile app showing business account balance and Tide Mastercard"
-                  className="w-auto object-contain drop-shadow-2xl"
-                  style={{ maxHeight: "420px", maxWidth: "100%" }}
+                  className="w-full max-w-xs md:max-w-sm object-contain drop-shadow-2xl mx-auto"
+                  style={{ maxHeight: "420px" }}
                 />
               </div>
             </div>
