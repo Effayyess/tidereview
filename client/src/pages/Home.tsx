@@ -145,10 +145,32 @@ export default function Home() {
                 {/* subtle dark vignette at bottom so badge is readable */}
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)' }} />
               </div>
-              {/* Floating Trustpilot Badge — overlapping bottom-left */}
+              {/* Floating Trustpilot Badge — overlapping bottom-left, accurate 4.4 stars */}
               <div className="absolute bottom-5 left-5 bg-white rounded-xl shadow-xl px-4 py-3 flex items-center gap-3 z-20">
-                <div className="flex">
-                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                <div className="flex items-center gap-0.5">
+                  {/* 4 full gold stars */}
+                  {[1,2,3,4].map(i => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                  {/* 5th star: 40% filled (4.4 - 4 = 0.4) using SVG clipPath */}
+                  <svg width="16" height="16" viewBox="0 0 24 24" className="flex-shrink-0">
+                    <defs>
+                      <clipPath id="star-fill-40">
+                        <rect x="0" y="0" width="9.6" height="24" />
+                      </clipPath>
+                    </defs>
+                    {/* Grey empty star base */}
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      fill="#d1d5db"
+                    />
+                    {/* Gold filled portion clipped to 40% */}
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      fill="#fbbf24"
+                      clipPath="url(#star-fill-40)"
+                    />
+                  </svg>
                 </div>
                 <div>
                   <p className="text-slate-800 font-bold text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>4.4 Excellent</p>

@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import FloatingCTA from "./components/FloatingCTA";
+import MobileBottomCTA from "./components/MobileBottomCTA";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
@@ -30,9 +31,11 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <Navigation />
-      <main className="flex-1">{children}</main>
+      {/* pb-20 xl:pb-0 ensures content isn't hidden behind the mobile bottom CTA bar */}
+      <main className="flex-1 pb-20 xl:pb-0">{children}</main>
       <Footer />
       <FloatingCTA />
+      <MobileBottomCTA />
     </div>
   );
 }
