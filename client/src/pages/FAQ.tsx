@@ -267,6 +267,7 @@ export default function FAQ() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Frequently Asked Questions"}]} />
       <section className="py-14" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container text-center">
           <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wider">
@@ -280,8 +281,6 @@ export default function FAQ() {
           </p>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Frequently Asked Questions"}]} />
-
       {/* FAQ Content */}
       <section className="py-14 bg-white">
         <div className="container max-w-4xl mx-auto">

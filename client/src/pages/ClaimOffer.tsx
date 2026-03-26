@@ -9,6 +9,7 @@ export default function ClaimOffer() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Claim REFER200 Offer"}]} />
       <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, oklch(0.18 0.08 262) 0%, oklch(0.28 0.12 262) 50%, oklch(0.22 0.10 262) 100%)' }}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, oklch(0.55 0.22 148) 0%, transparent 50%), radial-gradient(circle at 80% 20%, oklch(0.55 0.22 262) 0%, transparent 40%)' }} />
         <div className="container relative text-center">
@@ -47,8 +48,6 @@ export default function ClaimOffer() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Claim REFER200 Offer"}]} />
-
       {/* How the Offer Works */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl mx-auto">

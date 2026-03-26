@@ -84,6 +84,7 @@ export default function Compare() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Tide vs Competitors"}]} />
       <section className="py-14" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container text-center">
           <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Head-to-Head Comparison</span>
@@ -102,8 +103,6 @@ export default function Compare() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Tide vs Competitors"}]} />
-
       {/* Overall Scores */}
       <section className="py-12 bg-white">
         <div className="container">

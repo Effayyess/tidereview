@@ -52,6 +52,7 @@ export default function CompanySetup() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Business Guide", href: "/company-setup"}, {label: "Company Formation Guide"}]} />
       <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -90,8 +91,6 @@ export default function CompanySetup() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Business Guide", href: "/company-setup"}, {label: "Company Formation Guide"}]} />
-
       {/* Why Form a Limited Company */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl mx-auto">

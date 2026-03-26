@@ -50,6 +50,7 @@ export default function BusinessVsPersonal() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Business Guide", href: "/business-vs-personal"}, {label: "Business vs Personal Account"}]} />
       <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container">
           <div className="max-w-3xl">
@@ -64,8 +65,6 @@ export default function BusinessVsPersonal() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Business Guide", href: "/business-vs-personal"}, {label: "Business vs Personal Account"}]} />
-
       {/* Quick Comparison */}
       <section className="py-12 bg-white">
         <div className="container">

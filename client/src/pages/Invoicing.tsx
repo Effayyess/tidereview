@@ -11,6 +11,7 @@ export default function Invoicing() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Features", href: "/features"}, {label: "Invoicing Review"}]} />
       <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container">
           <div className="max-w-3xl">
@@ -36,8 +37,6 @@ export default function Invoicing() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Features", href: "/features"}, {label: "Invoicing Review"}]} />
-
       {/* Score */}
       <section className="py-8 bg-white border-b border-slate-100">
         <div className="container">

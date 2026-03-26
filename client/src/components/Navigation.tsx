@@ -1,6 +1,9 @@
 // Navigation component for TideReview.co.uk
 // Design: Compact single-line sticky header — Tide navy, Sora font, tight CTA
-import { useState } from "react";
+// Dropdown fix: uses useRef + setTimeout so the panel stays open while the
+// mouse travels from the trigger button down into the panel. A 150ms grace
+// period prevents the "disappears before you can click" race condition.
+import { useState, useRef, useCallback } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -33,6 +36,31 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [location] = useLocation();
+  // One close-timer per dropdown label
+  const closeTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+
+  const openMenu = useCallback((label: string) => {
+    // Cancel any pending close for this label
+    if (closeTimers.current[label]) {
+      clearTimeout(closeTimers.current[label]);
+      delete closeTimers.current[label];
+    }
+    setOpenDropdown(label);
+  }, []);
+
+  const scheduleClose = useCallback((label: string) => {
+    // Give the user 180ms to move the mouse into the panel before closing
+    closeTimers.current[label] = setTimeout(() => {
+      setOpenDropdown((prev) => (prev === label ? null : prev));
+    }, 180);
+  }, []);
+
+  const cancelClose = useCallback((label: string) => {
+    if (closeTimers.current[label]) {
+      clearTimeout(closeTimers.current[label]);
+      delete closeTimers.current[label];
+    }
+  }, []);
 
   return (
     <header className="sticky-header">
@@ -52,29 +80,53 @@ export default function Navigation() {
           <nav className="hidden xl:flex items-center gap-0.5 flex-1 justify-center">
             {navLinks.map((link) =>
               link.dropdown ? (
+                // The entire wrapper (button + panel) shares the same enter/leave handlers
+                // so moving the mouse between them never triggers a close.
                 <div
                   key={link.label}
                   className="relative"
-                  onMouseEnter={() => setOpenDropdown(link.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseEnter={() => openMenu(link.label)}
+                  onMouseLeave={() => scheduleClose(link.label)}
                 >
                   <button
                     className="flex items-center gap-1 px-2.5 py-1.5 text-xs text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-all whitespace-nowrap"
                     style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}
+                    // Also open on click for keyboard / touch users
+                    onClick={() =>
+                      setOpenDropdown((prev) =>
+                        prev === link.label ? null : link.label
+                      )
+                    }
                   >
                     {link.label}
-                    <ChevronDown className="w-3 h-3" />
+                    <ChevronDown
+                      className="w-3 h-3 transition-transform duration-150"
+                      style={{
+                        transform:
+                          openDropdown === link.label
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                      }}
+                    />
                   </button>
+
+                  {/* Panel — shares the same onMouseEnter/Leave so it keeps the menu alive */}
                   <div
-                    className="absolute top-full left-0 mt-1 w-52 rounded-xl shadow-2xl overflow-hidden"
+                    onMouseEnter={() => cancelClose(link.label)}
+                    onMouseLeave={() => scheduleClose(link.label)}
+                    className="absolute left-0 w-52 rounded-xl shadow-2xl overflow-hidden"
                     style={{
-                      background: 'oklch(0.18 0.06 262)',
-                      border: '1px solid oklch(0.32 0.10 262)',
+                      top: "calc(100% + 4px)",
+                      background: "oklch(0.18 0.06 262)",
+                      border: "1px solid oklch(0.32 0.10 262)",
                       opacity: openDropdown === link.label ? 1 : 0,
-                      pointerEvents: openDropdown === link.label ? 'auto' : 'none',
-                      transform: openDropdown === link.label ? 'translateY(0)' : 'translateY(-6px)',
-                      transition: 'all 0.15s ease',
-                      zIndex: 100,
+                      pointerEvents: openDropdown === link.label ? "auto" : "none",
+                      transform:
+                        openDropdown === link.label
+                          ? "translateY(0)"
+                          : "translateY(-6px)",
+                      transition: "opacity 0.15s ease, transform 0.15s ease",
+                      zIndex: 200,
                     }}
                   >
                     {link.dropdown.map((item) => (
@@ -82,7 +134,7 @@ export default function Navigation() {
                         key={item.href}
                         href={item.href}
                         className="block px-4 py-2.5 text-xs text-slate-200 hover:text-white hover:bg-white/10 transition-colors no-underline"
-                        style={{ fontFamily: 'DM Sans, sans-serif' }}
+                        style={{ fontFamily: "DM Sans, sans-serif" }}
                         onClick={() => setOpenDropdown(null)}
                       >
                         {item.label}
@@ -96,10 +148,10 @@ export default function Navigation() {
                   href={link.href}
                   className={`px-2.5 py-1.5 text-xs rounded-md transition-all no-underline whitespace-nowrap ${
                     location === link.href
-                      ? 'text-white bg-white/15 font-semibold'
-                      : 'text-slate-200 hover:text-white hover:bg-white/10'
+                      ? "text-white bg-white/15 font-semibold"
+                      : "text-slate-200 hover:text-white hover:bg-white/10"
                   }`}
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}
+                  style={{ fontFamily: "DM Sans, sans-serif", fontWeight: 500 }}
                 >
                   {link.label}
                 </Link>
@@ -115,7 +167,9 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className="cta-primary px-3 py-1.5 rounded-lg text-xs font-bold no-underline flex items-center gap-1.5 whitespace-nowrap"
             >
-              <span className="font-mono font-black bg-black/20 px-1.5 py-0.5 rounded text-emerald-200 text-xs">REFER200</span>
+              <span className="font-mono font-black bg-black/20 px-1.5 py-0.5 rounded text-emerald-200 text-xs">
+                REFER200
+              </span>
               <span>Claim £200</span>
             </a>
           </div>
@@ -133,14 +187,17 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="xl:hidden border-t border-white/10" style={{ background: 'oklch(0.18 0.06 262)' }}>
+        <div
+          className="xl:hidden border-t border-white/10"
+          style={{ background: "oklch(0.18 0.06 262)" }}
+        >
           <div className="container py-3 flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <div key={link.label}>
                 <Link
                   href={link.href}
                   className="block px-3 py-2.5 text-sm text-slate-200 hover:text-white hover:bg-white/10 rounded-lg transition-colors no-underline"
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontWeight: 500 }}
+                  style={{ fontFamily: "DM Sans, sans-serif", fontWeight: 500 }}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -152,7 +209,7 @@ export default function Navigation() {
                         key={item.href}
                         href={item.href}
                         className="block px-3 py-2 text-xs text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors no-underline"
-                        style={{ fontFamily: 'DM Sans, sans-serif' }}
+                        style={{ fontFamily: "DM Sans, sans-serif" }}
                         onClick={() => setMobileOpen(false)}
                       >
                         {item.label}

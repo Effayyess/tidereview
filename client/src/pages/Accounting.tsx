@@ -11,6 +11,7 @@ export default function Accounting() {
   return (
     <div>
       {/* Hero */}
+      <Breadcrumb items={[{label: "Features", href: "/features"}, {label: "Accounting & VAT Review"}]} />
       <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.32 0.14 262))' }}>
         <div className="container">
           <div className="max-w-3xl">
@@ -25,8 +26,6 @@ export default function Accounting() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Features", href: "/features"}, {label: "Accounting & VAT Review"}]} />
-
       {/* Score Bar */}
       <section className="py-6 bg-white border-b border-slate-100">
         <div className="container flex flex-wrap items-center gap-6">

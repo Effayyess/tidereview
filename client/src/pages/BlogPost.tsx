@@ -542,12 +542,11 @@ export default function BlogPost() {
 
   return (
     <div>
+      {/* Breadcrumb — sits above the hero, no overlap */}
+      <Breadcrumb items={[{label: "Blog", href: "/blog"}, {label: post.title}]} />
       {/* Hero */}
       <section className="py-12" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container max-w-3xl mx-auto">
-          <Link href="/blog" className="inline-flex items-center gap-1 text-slate-300 hover:text-white text-sm mb-6 no-underline transition-colors">
-            <ChevronLeft className="w-4 h-4" /> Back to Blog
-          </Link>
           <span className={`text-xs font-semibold px-3 py-1 rounded-full mb-4 inline-block ${post.categoryColor}`}>
             {post.category}
           </span>
@@ -560,7 +559,6 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Blog", href: "/blog"}, {label: post.title}]} />
 
       {/* Hero Image */}
       <div className="w-full max-w-3xl mx-auto -mt-0">

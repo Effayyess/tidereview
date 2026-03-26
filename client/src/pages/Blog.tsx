@@ -112,6 +112,7 @@ export default function Blog() {
 
   return (
     <div>
+      <Breadcrumb items={[{label: "Blog"}]} />
       {/* Hero */}
       <section className="py-14" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container">
@@ -124,7 +125,6 @@ export default function Blog() {
           </p>
         </div>
       </section>
-      <Breadcrumb items={[{label: "Blog"}]} />
 
       {/* Featured Post */}
       <section className="py-12 bg-white">
