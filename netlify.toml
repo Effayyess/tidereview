@@ -1,0 +1,13 @@
+[build]
+  base    = "client"
+  command = "pnpm install && pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA routing — all paths serve index.html so React Router handles them
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
