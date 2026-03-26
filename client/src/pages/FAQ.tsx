@@ -207,7 +207,7 @@ const faqs: FAQItem[] = [
     category: "Company Formation",
     q: "Can I register a limited company with Tide?",
     a: (
-      <p>Yes. Tide offers a <strong>company registration service</strong> for just <strong>£24.99</strong> — saving £75 compared to registering directly with Companies House (which costs £50 for same-day or £12 for standard, but requires separate bank account setup). Through Tide, you can register your limited company and open your business bank account in a single, streamlined process. Your Certificate of Incorporation is typically issued within one business day.</p>
+      <p>Yes. Tide offers a <strong>company registration service</strong> for just <strong>£24.99</strong> — saving £75.01 compared to registering directly with Companies House (which now charges <strong>£100</strong> for the standard online registration, plus requires separate bank account setup). Through Tide, you can register your limited company and open your business bank account in a single, streamlined process. Your Certificate of Incorporation is typically issued within one business day.</p>
     ),
   },
   {

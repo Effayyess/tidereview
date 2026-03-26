@@ -164,12 +164,12 @@ export default function CompanySetup() {
                 <tr style={{ background: 'oklch(0.22 0.08 262)' }}>
                   <th className="text-left p-4 text-white font-semibold">Feature</th>
                   <th className="text-center p-4 text-white font-semibold">Tide (£24.99)</th>
-                  <th className="text-center p-4 text-white font-semibold">Companies House Direct (£50)</th>
+                  <th className="text-center p-4 text-white font-semibold">Companies House Direct (£100)</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { feature: "Formation fee", tide: "£24.99", ch: "£50" },
+                  { feature: "Formation fee", tide: "£24.99", ch: "£100" },
                   { feature: "Business bank account included", tide: "✓ Free", ch: "✗ Separate" },
                   { feature: "Digital application", tide: "✓", ch: "✓" },
                   { feature: "Certificate turnaround", tide: "1 business day", ch: "1-3 business days" },
@@ -190,10 +190,10 @@ export default function CompanySetup() {
 
           <div className="tide-prose mb-8">
             <p className="text-slate-600 leading-relaxed mb-4">
-              Registering directly with Companies House costs £50 and gives you just the incorporation certificate. You'd then need to separately open a business bank account, set up invoicing software, and find accounting tools — all at additional cost and effort.
+              Registering directly with Companies House now costs <strong>£100</strong> and gives you just the incorporation certificate. You'd then need to separately open a business bank account, set up invoicing software, and find accounting tools — all at additional cost and effort.
             </p>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Tide's £24.99 company formation service is not only cheaper than going direct to Companies House, but it bundles the bank account and business tools into one seamless process. You can go from idea to incorporated company with a fully functional business bank account in a single afternoon.
+              Tide's £24.99 company formation service saves you £75.01 versus the £100 Companies House direct fee, and it bundles the bank account and business tools into one seamless process. You can go from idea to incorporated company with a fully functional business bank account in a single afternoon.
             </p>
             <p className="text-slate-600 leading-relaxed">
               And with referral code <strong>REFER200</strong>, you can earn up to <strong>£200 free cash</strong> on top of all these savings — making Tide's company formation service an outstanding value proposition for any new UK business owner.

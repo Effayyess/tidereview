@@ -6,7 +6,7 @@ import { CheckCircle, XCircle, Star, Shield, Zap, Users, TrendingUp, CreditCard,
 import ReferralBanner from "@/components/ReferralBanner";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-hero-g3S6sJ5gBV4g64vsBa75fh.webp";
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-card_b701c5a8.png";
 const MOBILE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-mobile-app-VNtjRaibWhjzEYsaepd7Bv.webp";
 
 const pros = [
@@ -17,7 +17,7 @@ const pros = [
   "Instant Saver account earning up to 4% AER",
   "Seamless Xero, QuickBooks & accounting integration",
   "Tide Card Reader for in-person payments",
-  "Company registration for just £24.99 (saving £75)",
+  "Company registration for just £24.99 (saving £75.01 vs Companies House £100 fee)",
   "Over 1.5 million UK businesses trust Tide",
   "4.4/5 Excellent rating on Trustpilot (32,000+ reviews)",
 ];
@@ -69,7 +69,7 @@ const features = [
   {
     icon: <Building2 className="w-6 h-6" />,
     title: "Company Formation",
-    desc: "Register a UK limited company for just £24.99 — saving £75 versus Companies House directly. Certificate issued within one business day.",
+    desc: "Register a UK limited company for just £24.99 — saving £75.01 versus the £100 Companies House direct fee. Certificate issued within one business day.",
     href: "/company-setup",
     color: "from-teal-500 to-teal-700",
   },
@@ -105,17 +105,17 @@ export default function Home() {
               
               {/* Referral Code Box */}
               <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-5 mb-8">
-                <p className="text-slate-300 text-sm mb-2">🎁 Exclusive Referral Code — Limited Time Offer</p>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <p className="text-slate-300 text-sm mb-3">🎁 Exclusive Referral Code — Limited Time Offer</p>
+                <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-white font-mono font-black text-3xl tracking-widest">REFER200</p>
-                    <p className="text-emerald-400 text-sm">Up to £200 free cash when you sign up</p>
+                    <p className="text-emerald-400 text-sm mt-1">Up to £200 free cash when you sign up</p>
                   </div>
                   <a
                     href={REFERRAL_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cta-primary px-6 py-3 rounded-xl font-bold no-underline text-sm whitespace-nowrap"
+                    className="cta-primary px-6 py-3 rounded-xl font-bold no-underline text-sm whitespace-nowrap flex-shrink-0"
                   >
                     Claim £200 Free →
                   </a>
@@ -134,19 +134,25 @@ export default function Home() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative hidden lg:block">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-transparent rounded-3xl" />
-              <img
-                src={HERO_IMG}
-                alt="Tide business banking - professional UK business owner with Tide card"
-                className="rounded-3xl shadow-2xl w-full object-cover"
-                style={{ maxHeight: '520px' }}
-              />
+            <div className="relative hidden lg:flex items-center justify-center">
+              {/* Glow backdrop for card */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div style={{ width: '320px', height: '420px', background: 'radial-gradient(ellipse at center, oklch(0.55 0.25 262) 0%, transparent 70%)', filter: 'blur(40px)', opacity: 0.5 }} />
+              </div>
+              {/* Card image — portrait, centred, with drop shadow */}
+              <div className="relative z-10" style={{ filter: 'drop-shadow(0 32px 64px rgba(0,0,0,0.5))' }}>
+                <img
+                  src={HERO_IMG}
+                  alt="Tide Mastercard business debit card"
+                  className="w-auto"
+                  style={{ maxHeight: '460px', maxWidth: '340px', borderRadius: '20px' }}
+                />
+              </div>
               {/* Floating Trust Badge */}
-              <div className="absolute bottom-6 left-6 bg-white rounded-xl shadow-xl p-3 flex items-center gap-3">
+              <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-xl p-3 flex items-center gap-3 z-20">
                 <div className="flex">
                   {[1,2,3,4].map(i => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
-                  <Star className="w-4 h-4 text-amber-400" style={{ fill: 'url(#half)' }} />
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                 </div>
                 <div>
                   <p className="text-slate-800 font-bold text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>4.4 Excellent</p>

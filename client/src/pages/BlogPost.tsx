@@ -161,7 +161,7 @@ const articleContent: Record<string, React.ReactNode> = {
       <p>You should also consider incorporating if you're taking on significant contracts, employing staff, or operating in a sector where limited liability protection is important.</p>
 
       <h2>Registering a Limited Company with Tide</h2>
-      <p>If you decide to incorporate, Tide offers one of the most convenient and cost-effective routes. You can register a UK limited company through Tide for just <strong>£24.99</strong> — saving £75 compared to using Companies House directly — and open your business bank account at the same time. Use referral code <strong>REFER200</strong> to claim up to £200 free cash.</p>
+      <p>If you decide to incorporate, Tide offers one of the most convenient and cost-effective routes. You can register a UK limited company through Tide for just <strong>£24.99</strong> — saving £75.01 compared to the £100 Companies House direct fee — and open your business bank account at the same time. Use referral code <strong>REFER200</strong> to claim up to £200 free cash.</p>
     </div>
   ),
 
@@ -220,7 +220,7 @@ const articleContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Option 1: Register Through Tide (Recommended)</h2>
-      <p>Tide offers company registration for just <strong>£24.99</strong> — a saving of £75 compared to going directly through Companies House. The process is fully integrated with opening your Tide business bank account, meaning you can have both your company registration and your business account set up in a single session.</p>
+      <p>Tide offers company registration for just <strong>£24.99</strong> — a saving of £75.01 compared to the £100 fee charged by Companies House directly. The process is fully integrated with opening your Tide business bank account, meaning you can have both your company registration and your business account set up in a single session.</p>
       <ol className="list-decimal pl-6 space-y-3 text-slate-600 mb-6">
         <li>Download the Tide app or visit tide.co</li>
         <li>Select "Register a new company" during the account opening process</li>
@@ -234,13 +234,13 @@ const articleContent: Record<string, React.ReactNode> = {
       <p>Use referral code <strong>REFER200</strong> when opening your Tide account to claim up to £200 free cash.</p>
 
       <h2>Option 2: Register Directly with Companies House</h2>
-      <p>You can register directly with Companies House online for £50 (same-day service) or £12 for the standard service. The process involves:</p>
+      <p>You can register directly with Companies House online for <strong>£100</strong> (standard online registration fee as of 2024). The process involves:</p>
       <ol className="list-decimal pl-6 space-y-3 text-slate-600 mb-6">
         <li>Create a Companies House account at companieshouse.gov.uk</li>
         <li>Complete the IN01 application form online</li>
         <li>Provide details of directors, shareholders, registered address, and share structure</li>
         <li>Upload your Memorandum and Articles of Association (standard templates are available)</li>
-        <li>Pay the registration fee (£50 for same-day, £12 for standard)</li>
+        <li>Pay the £100 registration fee</li>
         <li>Receive your Certificate of Incorporation by email</li>
       </ol>
 
