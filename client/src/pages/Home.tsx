@@ -340,12 +340,12 @@ export default function Home() {
                   🎁 Open Account — Use Code REFER200 →
                 </a>
               </div>
-              <div className="hidden md:block">
+              <div className="hidden md:flex items-center justify-center">
                 <img
-                  src={MOBILE_IMG}
-                  alt="Tide mobile banking app showing account balance"
-                  className="rounded-2xl shadow-xl w-full object-cover"
-                  style={{ maxHeight: '500px' }}
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-app-screenshot_b4d1c8cc.webp"
+                  alt="Tide mobile app showing business account balance and Tide Mastercard"
+                  className="w-auto object-contain drop-shadow-2xl"
+                  style={{ maxHeight: '520px', maxWidth: '100%' }}
                 />
               </div>
             </div>
