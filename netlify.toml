@@ -1,12 +1,12 @@
 [build]
-  base    = "client"
-  command = "pnpm install && pnpm build"
-  publish = "dist"
+  command = "pnpm install && npx vite build"
+  publish = "dist/public"
 
 [build.environment]
   NODE_VERSION = "22"
+  NODE_ENV = "production"
 
-# SPA routing — all paths serve index.html so React Router handles them
+# SPA routing — all paths serve index.html so React Router handles them client-side
 [[redirects]]
   from   = "/*"
   to     = "/index.html"
