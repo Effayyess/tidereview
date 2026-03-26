@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import FloatingCTA from "./components/FloatingCTA";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import Home from "./pages/Home";
@@ -19,10 +20,14 @@ import CompanySetup from "./pages/CompanySetup";
 import Reviews from "./pages/Reviews";
 import ClaimOffer from "./pages/ClaimOffer";
 import Features from "./pages/Features";
+import Compare from "./pages/Compare";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navigation />
       <main className="flex-1">{children}</main>
       <Footer />
@@ -44,6 +49,9 @@ function Router() {
       <Route path="/company-setup" component={() => <Layout><CompanySetup /></Layout>} />
       <Route path="/reviews" component={() => <Layout><Reviews /></Layout>} />
       <Route path="/claim-offer" component={() => <Layout><ClaimOffer /></Layout>} />
+      <Route path="/compare" component={() => <Layout><Compare /></Layout>} />
+      <Route path="/blog" component={() => <Layout><Blog /></Layout>} />
+      <Route path="/blog/:slug" component={() => <Layout><BlogPost /></Layout>} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
