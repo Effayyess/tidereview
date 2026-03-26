@@ -3,7 +3,9 @@
 // Design: Navy hero, clean editorial layout, prominent REFER200 throughout
 // Mobile-first: all sections fully responsive, images visible on mobile
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import { CheckCircle, XCircle, Star, Shield, Zap, Users, TrendingUp, CreditCard, FileText, Calculator, Building2, ChevronRight } from "lucide-react";
+import { updatedLabel, currentYear } from "@/lib/dateUtils";
 import ReferralBanner from "@/components/ReferralBanner";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
@@ -84,6 +86,12 @@ const stats = [
 ];
 
 export default function Home() {
+  useSEO({
+    title: "Tide Bank Review 2026 | Honest UK Business Account Review + REFER200 (£200 Free)",
+    description: "The most comprehensive Tide bank review for UK businesses in 2026. Compare plans, features, Trustpilot ratings and claim up to £200 free cash with referral code REFER200.",
+    canonical: "/",
+    keywords: "tide bank review, tide review 2026, tide business account review, tide referral code, REFER200, tide bank uk",
+  });
   return (
     <div>
       {/* ── HERO ── */}
@@ -108,7 +116,7 @@ export default function Home() {
           <div className="lg:hidden">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wider">
-              ⭐ Updated March 2026
+              ⭐ {updatedLabel()}
             </div>
 
             {/* Headline */}
@@ -182,7 +190,7 @@ export default function Home() {
             {/* Left: copy */}
             <div>
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-                ⭐ Updated March 2026
+                ⭐ {updatedLabel()}
               </div>
               <h1
                 className="text-5xl xl:text-6xl font-black text-white leading-tight mb-6"
@@ -582,7 +590,7 @@ export default function Home() {
                 className="text-2xl sm:text-3xl lg:text-4xl font-black mt-2"
                 style={{ fontFamily: "Sora, sans-serif", color: "oklch(0.22 0.08 262)" }}
               >
-                Is Tide Worth It in 2026?
+                Is Tide Worth It in {currentYear()}?
               </h2>
             </div>
 

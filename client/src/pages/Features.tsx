@@ -1,5 +1,6 @@
 // Features Overview Page
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import { FileText, Calculator, CreditCard, TrendingUp, Users, Building2, ChevronRight, Smartphone, Globe, Shield } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -42,6 +43,12 @@ const featureGroups = [
 ];
 
 export default function Features() {
+  useSEO({
+    title: "Tide Bank Features Review 2026 | Invoicing, Accounting, Card Reader & More",
+    description: "A complete review of every Tide business banking feature in 2026 — invoicing, VAT filing, accounting integrations, card reader, expense cards, and more.",
+    canonical: "/features",
+    keywords: "tide features review, tide invoicing, tide accounting, tide card reader, tide business account features",
+  });
   return (
     <div>
       {/* Hero */}
@@ -49,7 +56,7 @@ export default function Features() {
       <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container text-center">
           <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Feature Review</span>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
             Tide Features: The Complete Guide
           </h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">

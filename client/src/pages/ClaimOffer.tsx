@@ -1,11 +1,18 @@
 // Claim Offer Page: How to Claim Your £200 Tide Referral Bonus
 // SEO: "Tide referral code REFER200", "Tide £200 free cash", "Tide promo code"
 import { CheckCircle, Gift, Clock, CreditCard, TrendingUp, AlertCircle } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 
 export default function ClaimOffer() {
+  useSEO({
+    title: "Claim £200 Free with Tide Referral Code REFER200 | Exclusive Offer 2026",
+    description: "Use exclusive Tide referral code REFER200 to claim up to £200 free cash when you open a Tide business account. £75 after first spend, £125 after second milestone.",
+    canonical: "/claim-offer",
+    keywords: "tide referral code REFER200, tide £200 free, tide referral offer, tide promo code, tide welcome bonus 2026",
+  });
   return (
     <div>
       {/* Hero */}
@@ -17,7 +24,7 @@ export default function ClaimOffer() {
             <Gift className="w-4 h-4" />
             Exclusive Referral Offer
           </div>
-          <h1 className="text-4xl lg:text-6xl font-black text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
             Claim Your<br />
             <span className="text-emerald-400">£200 Free Cash</span>
           </h1>
@@ -28,7 +35,7 @@ export default function ClaimOffer() {
           {/* Big Code Display */}
           <div className="inline-block bg-white/10 backdrop-blur border-2 border-emerald-400/50 rounded-2xl px-10 py-6 mb-8">
             <p className="text-slate-300 text-sm mb-2">Your exclusive referral code</p>
-            <p className="text-white font-mono font-black text-5xl tracking-widest">REFER200</p>
+            <p className="text-white font-mono font-black text-3xl sm:text-5xl tracking-widest">REFER200</p>
             <p className="text-emerald-400 text-sm mt-2">Up to £200 free cash</p>
           </div>
 
@@ -66,7 +73,7 @@ export default function ClaimOffer() {
                   <span className="text-emerald-100 text-sm font-semibold uppercase tracking-wider">Milestone 1</span>
                   <CreditCard className="w-6 h-6 text-emerald-200" />
                 </div>
-                <p className="text-white font-black text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>£75</p>
+                <p className="text-white font-black text-2xl sm:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>£75</p>
                 <p className="text-emerald-100 text-sm">Free cash reward</p>
               </div>
               <div className="p-6 bg-white">
@@ -88,7 +95,7 @@ export default function ClaimOffer() {
                   <span className="text-blue-200 text-sm font-semibold uppercase tracking-wider">Milestone 2</span>
                   <TrendingUp className="w-6 h-6 text-blue-200" />
                 </div>
-                <p className="text-white font-black text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>£125</p>
+                <p className="text-white font-black text-2xl sm:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>£125</p>
                 <p className="text-blue-200 text-sm">Free cash reward</p>
               </div>
               <div className="p-6 bg-white">

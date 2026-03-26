@@ -1,6 +1,8 @@
 // Reviews Page: Tide Trustpilot & Customer Reviews
 // SEO: "Tide bank reviews", "Tide Trustpilot", "Tide customer reviews"
 import { Star, ThumbsUp, ThumbsDown, Quote } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
+import { updatedLabel, currentMonthYear, currentYear, lastReviewedLabel } from "@/lib/dateUtils";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -80,6 +82,12 @@ const ratingBreakdown = [
 ];
 
 export default function Reviews() {
+  useSEO({
+    title: "Tide Bank Reviews 2026 | Trustpilot 4.4/5 — What Customers Really Think",
+    description: "Analysis of over 32,000 Tide Trustpilot reviews. 73% five-star ratings. Read real customer feedback on Tide's business account, app, and customer service.",
+    canonical: "/reviews",
+    keywords: "tide bank reviews, tide trustpilot, tide customer reviews 2026, is tide bank good, tide bank rating",
+  });
   return (
     <div>
       {/* Hero */}
@@ -154,7 +162,7 @@ export default function Reviews() {
                     <span className="text-slate-500 text-sm w-10 text-right">{item.percentage}%</span>
                   </div>
                 ))}
-                <p className="text-slate-400 text-xs mt-2">Source: Trustpilot (March 2026)</p>
+                <p className="text-slate-400 text-xs mt-2">Source: Trustpilot ({currentMonthYear()})</p>
               </div>
             </div>
           </div>

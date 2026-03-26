@@ -1,6 +1,7 @@
 // Card Reader Page
 // SEO: "Tide card reader review", "Tide card reader price"
 import { CheckCircle, Star, Wifi, Battery, CreditCard, Smartphone } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -8,6 +9,12 @@ const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const CARD_READER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-card-reader-jTQenuTUabqA32PEtMdt3i.webp";
 
 export default function CardReader() {
+  useSEO({
+    title: "Tide Card Reader Review 2026 | Best Business Card Reader UK?",
+    description: "Comprehensive review of the Tide Card Reader. Compare the Lite and Pro models, transaction fees, setup process, and how it integrates with your Tide business account.",
+    canonical: "/card-reader",
+    keywords: "tide card reader review, tide card reader uk, tide pos review, tide card reader fees, best business card reader uk",
+  });
   return (
     <div>
       {/* Hero */}
@@ -17,7 +24,7 @@ export default function CardReader() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Feature Review</span>
-              <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Tide Card Reader Review:<br />
                 <span className="text-emerald-400">Take Payments Anywhere</span>
               </h1>
@@ -158,8 +165,8 @@ export default function CardReader() {
               <p className="text-slate-600 leading-relaxed mb-4">
                 Tide offers two pricing structures for card reader transactions, depending on whether you have a Tide subscription plan:
               </p>
-              <div className="rounded-xl overflow-hidden border border-slate-100 mb-6">
-                <table className="w-full text-sm">
+              <div className="rounded-xl overflow-hidden border border-slate-100 mb-6 overflow-x-auto">
+                <table className="w-full text-sm min-w-[480px]">
                   <thead>
                     <tr style={{ background: 'oklch(0.22 0.08 262)' }}>
                       <th className="text-left p-4 text-white font-semibold">Pricing Model</th>

@@ -2,6 +2,8 @@
 // SEO targets: "Is Tide bank safe?", "Does Tide have FSCS protection?", "Tide bank review questions"
 // Design: Navy hero, accordion FAQ, structured data via JSON-LD in head
 import { useState } from "react";
+import { useSEO } from "@/hooks/useSEO";
+import { updatedLabel, currentMonthYear, currentYear, lastReviewedLabel } from "@/lib/dateUtils";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import ReferralBanner from "@/components/ReferralBanner";
 import { Link } from "wouter";
@@ -257,6 +259,12 @@ function FAQAccordion({ items }: { items: FAQItem[] }) {
 }
 
 export default function FAQ() {
+  useSEO({
+    title: "Tide Bank FAQ 2026 | Frequently Asked Questions About Tide Business Account",
+    description: "Answers to the most common questions about Tide business banking — account safety, FSCS protection, fees, features, opening times, and the REFER200 referral offer.",
+    canonical: "/faq",
+    keywords: "tide bank faq, tide bank questions, is tide bank safe, tide FSCS protection, tide account opening time",
+  });
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const displayCategories = ["All", ...categories];
 
@@ -273,7 +281,7 @@ export default function FAQ() {
           <div className="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" /> Frequently Asked Questions
           </div>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
             Tide Bank FAQ 2026
           </h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">

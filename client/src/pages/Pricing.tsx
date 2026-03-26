@@ -1,6 +1,8 @@
 // Pricing Page: Tide Business Account Plans
 // SEO: "Tide pricing", "Tide business account plans"
 import { CheckCircle, XCircle, Star } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
+import { updatedLabel, currentMonthYear, currentYear, lastReviewedLabel } from "@/lib/dateUtils";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -108,6 +110,12 @@ const addOns = [
 ];
 
 export default function Pricing() {
+  useSEO({
+    title: "Tide Business Account Pricing 2026 | Free, Plus, Pro & Max Plans Compared",
+    description: "Full breakdown of Tide's four business account plans — Free, Plus (£9.99/mo), Pro (£18.99/mo), and Max (£49.99/mo). See which plan is right for your business.",
+    canonical: "/pricing",
+    keywords: "tide pricing 2026, tide business account cost, tide plus plan, tide pro plan, tide free account, tide monthly fee",
+  });
   return (
     <div>
       {/* Hero */}

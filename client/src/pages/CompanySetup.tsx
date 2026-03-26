@@ -1,6 +1,7 @@
 // Company Setup Page
 // SEO: "Tide company formation", "register limited company UK", "Tide company registration review"
 import { CheckCircle, Building2, Clock, FileCheck, Shield, ChevronRight } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -49,6 +50,12 @@ const benefits = [
 ];
 
 export default function CompanySetup() {
+  useSEO({
+    title: "How to Register a Limited Company UK 2026 | Tide Company Formation Guide",
+    description: "Step-by-step guide to registering a UK limited company in 2026. Compare Tide's £24.99 company formation service vs Companies House's £100 fee.",
+    canonical: "/company-setup",
+    keywords: "register limited company uk, tide company formation, companies house registration, how to set up limited company uk 2026",
+  });
   return (
     <div>
       {/* Hero */}
@@ -58,14 +65,14 @@ export default function CompanySetup() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Business Guide</span>
-              <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Setting Up a Limited Company<br />
                 <span className="text-emerald-400">with Tide: Full Review</span>
               </h1>
               <p className="text-slate-300 text-lg leading-relaxed mb-6">
                 Tide offers a complete company formation service that lets you register a UK limited company and open a business bank account in one seamless process — for just £24.99.
               </p>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div className="bg-white/10 rounded-xl p-4 text-center">
                   <p className="text-emerald-400 font-black text-2xl" style={{ fontFamily: 'Sora, sans-serif' }}>£24.99</p>
                   <p className="text-slate-300 text-xs">Formation fee</p>
@@ -160,7 +167,7 @@ export default function CompanySetup() {
             Tide Company Formation vs. Going Direct to Companies House
           </h2>
           <div className="rounded-xl overflow-hidden border border-slate-100 shadow-sm mb-8">
-            <table className="w-full text-sm">
+            <table className="w-full text-sm min-w-[480px]">
               <thead>
                 <tr style={{ background: 'oklch(0.22 0.08 262)' }}>
                   <th className="text-left p-4 text-white font-semibold">Feature</th>

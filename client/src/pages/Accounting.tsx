@@ -1,6 +1,7 @@
 // Accounting & VAT Page
 // SEO: "Tide accounting review", "Tide VAT support", "Tide Making Tax Digital"
 import { CheckCircle, Star, Calculator, Receipt, BarChart3, FileCheck } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -8,6 +9,12 @@ const REFERRAL_URL = "https://www.tide.co/partners/refer-save-refer200/bca/";
 const ACCOUNTING_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663463037748/NdxoWU34dYunuZMFnFGgvt/tide-accounting-oE5vVu49o7N2q8kZWWiL8K.webp";
 
 export default function Accounting() {
+  useSEO({
+    title: "Tide Accounting & VAT Review 2026 | MTD-Ready Business Accounting",
+    description: "Review of Tide's accounting and VAT tools. HMRC-recognised, Making Tax Digital compliant, with Xero, QuickBooks and Sage integrations. File VAT returns directly from the app.",
+    canonical: "/accounting",
+    keywords: "tide accounting review, tide VAT filing, tide MTD, making tax digital tide, tide xero integration",
+  });
   return (
     <div>
       {/* Hero */}
@@ -16,7 +23,7 @@ export default function Accounting() {
         <div className="container">
           <div className="max-w-3xl">
             <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Feature Review</span>
-            <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
               Tide Accounting & VAT Review:<br />
               <span className="text-emerald-400">Making Tax Digital Made Easy</span>
             </h1>
@@ -144,8 +151,8 @@ export default function Accounting() {
               <h2 className="text-2xl font-black mb-4" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>
                 Accounting Plans & Pricing
               </h2>
-              <div className="rounded-xl overflow-hidden border border-slate-100 mb-8">
-                <table className="w-full text-sm">
+              <div className="rounded-xl overflow-hidden border border-slate-100 mb-8 overflow-x-auto">
+                <table className="w-full text-sm min-w-[480px]">
                   <thead>
                     <tr style={{ background: 'oklch(0.22 0.08 262)' }}>
                       <th className="text-left p-4 text-white font-semibold">Feature</th>

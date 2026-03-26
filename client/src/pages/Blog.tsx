@@ -1,6 +1,8 @@
 // Blog Index Page
 // SEO: "Tide bank blog", "UK business banking tips", "small business finance UK"
 import { Link } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
+import { updatedLabel, currentMonthYear, currentYear, lastReviewedLabel } from "@/lib/dateUtils";
 import { Calendar, Clock, ChevronRight, Tag } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -108,6 +110,12 @@ export const blogPosts = [
 ];
 
 export default function Blog() {
+  useSEO({
+    title: "Tide Bank Blog 2026 | Business Banking Guides, Tips & News",
+    description: "Expert guides on UK business banking, Making Tax Digital, company formation, and how to get the most from your Tide business account. Plus the exclusive REFER200 offer.",
+    canonical: "/blog",
+    keywords: "tide bank blog, uk business banking guide, making tax digital 2026, tide business tips, REFER200",
+  });
   const [featured, ...rest] = blogPosts;
 
   return (
@@ -117,7 +125,7 @@ export default function Blog() {
       <section className="py-14" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container">
           <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Business Banking Insights</span>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
             The TideReview Blog
           </h1>
           <p className="text-slate-300 text-lg max-w-2xl">

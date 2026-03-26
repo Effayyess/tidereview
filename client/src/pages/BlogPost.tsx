@@ -1,6 +1,8 @@
 // BlogPost page — renders individual articles by slug
 // All 5 articles are defined inline with full content
 import { Link, useParams } from "wouter";
+import { updatedLabel, currentMonthYear, currentYear, lastReviewedLabel } from "@/lib/dateUtils";
+import { useSEO } from "@/hooks/useSEO";
 import { Calendar, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { blogPosts } from "./Blog";
 import ReferralBanner from "@/components/ReferralBanner";
@@ -490,7 +492,7 @@ const articleContent: Record<string, React.ReactNode> = {
           </tbody>
         </table>
       </div>
-      <p className="text-xs text-slate-400 mb-6">Rates correct as of March 2026. Variable rates are subject to change.</p>
+      <p className="text-xs text-slate-400 mb-6">Rates correct as of {currentMonthYear()}. Variable rates are subject to change.</p>
 
       <h2>How Much Could You Earn?</h2>
       <p>At 4% AER, the interest on various balances over one year would be:</p>
@@ -539,6 +541,14 @@ export default function BlogPost() {
   const currentIndex = blogPosts.findIndex((p) => p.slug === slug);
   const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
+
+  // Dynamic per-article SEO
+  useSEO({
+    title: post ? `${post.title} | TideReview.co.uk` : "Blog | TideReview.co.uk",
+    description: post ? post.excerpt : "Expert guides on Tide business banking, Making Tax Digital, company formation and the REFER200 referral offer.",
+    canonical: post ? `/blog/${post.slug}` : "/blog",
+    keywords: "tide bank review, tide business account, REFER200, tide referral code, uk business banking",
+  });
 
   return (
     <div>

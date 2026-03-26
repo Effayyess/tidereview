@@ -1,6 +1,8 @@
 // Compare Page: Tide vs Starling vs Monzo vs Revolut Business
 // SEO: "Tide vs Starling", "Tide vs Monzo Business", "best UK business bank account 2026"
 import { CheckCircle, XCircle, Minus, Star, Trophy } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
+import { updatedLabel, currentMonthYear, currentYear, lastReviewedLabel } from "@/lib/dateUtils";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -81,6 +83,12 @@ function Cell({ val, highlight }: { val: CellVal; highlight?: boolean }) {
 }
 
 export default function Compare() {
+  useSEO({
+    title: "Tide vs Starling vs Monzo vs Revolut 2026 | Best UK Business Bank Comparison",
+    description: "Head-to-head comparison of the four leading UK digital business banks. Tide vs Starling vs Monzo vs Revolut — features, pricing, Trustpilot ratings, and our verdict.",
+    canonical: "/compare",
+    keywords: "tide vs starling, tide vs monzo, tide vs revolut, best uk business bank 2026, tide bank comparison",
+  });
   return (
     <div>
       {/* Hero */}
@@ -194,7 +202,7 @@ export default function Compare() {
               </tbody>
             </table>
           </div>
-          <p className="text-slate-400 text-xs mt-3 text-center">Data accurate as of March 2026. Always verify current terms on each provider's website.</p>
+          <p className="text-slate-400 text-xs mt-3 text-center">Data accurate as of {currentMonthYear()}. Always verify current terms on each provider's website.</p>
         </div>
       </section>
 

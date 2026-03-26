@@ -1,6 +1,7 @@
 // Business vs Personal Account Page
 // SEO: "business bank account vs personal", "do I need a business bank account UK"
 import { CheckCircle, XCircle, AlertTriangle, Building2, User } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 import ReferralBanner from "@/components/ReferralBanner";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -47,6 +48,12 @@ const reasons = [
 ];
 
 export default function BusinessVsPersonal() {
+  useSEO({
+    title: "Business Bank Account vs Personal Account UK 2026 | Why You Need Both Separate",
+    description: "Six compelling reasons why every UK business owner needs a dedicated business bank account. Legal requirements, tax benefits, and how Tide makes it easy.",
+    canonical: "/business-vs-personal",
+    keywords: "business bank account vs personal uk, do i need a business bank account, sole trader bank account, limited company bank account",
+  });
   return (
     <div>
       {/* Hero */}
@@ -55,7 +62,7 @@ export default function BusinessVsPersonal() {
         <div className="container">
           <div className="max-w-3xl">
             <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Business Guide</span>
-            <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
               Business Bank Account vs Personal:<br />
               <span className="text-emerald-400">Why Every Business Needs One</span>
             </h1>
