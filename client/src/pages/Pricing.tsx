@@ -112,19 +112,20 @@ export default function Pricing() {
     <div>
       {/* Hero */}
       <Breadcrumb items={[{label: "Pricing & Plans"}]} />
-      <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
+      <section className="py-10 lg:py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container text-center">
-          <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Pricing Review</span>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Tide Business Account<br />Pricing & Plans 2026
+          <span className="text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Pricing Review</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+            Tide Business Account Pricing &amp; Plans 2026
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-6 px-2">
             A comprehensive breakdown of every Tide plan — from the free basic account to the full-featured Max plan. Find the right plan for your business.
           </p>
-          <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3">
-            <span className="text-slate-300 text-sm">Use referral code</span>
-            <span className="font-mono font-black text-emerald-400 text-lg">REFER200</span>
-            <span className="text-slate-300 text-sm">for up to</span>
+          {/* Referral code badge — stacks on mobile */}
+          <div className="inline-flex flex-wrap justify-center items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm">
+            <span className="text-slate-300">Use referral code</span>
+            <span className="font-mono font-black text-emerald-400 text-base">REFER200</span>
+            <span className="text-slate-300">for up to</span>
             <span className="text-white font-bold">£200 free cash</span>
           </div>
         </div>
@@ -132,13 +133,13 @@ export default function Pricing() {
       {/* Plans Grid */}
       <section className="py-16 bg-white">
         <div className="container">
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {plans.map((plan) => (
               <div
                 key={plan.name}
                 className={`rounded-2xl overflow-hidden border-2 transition-all ${
                   plan.highlight
-                    ? 'border-emerald-400 shadow-2xl shadow-emerald-100 scale-105'
+                    ? 'border-emerald-400 shadow-2xl shadow-emerald-100'
                     : 'border-slate-100 shadow-sm'
                 }`}
               >
@@ -209,13 +210,13 @@ export default function Pricing() {
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
             {addOns.map((addon) => (
-              <div key={addon.name} className="bg-white rounded-xl p-5 border border-slate-100 shadow-sm flex items-start justify-between gap-4">
+              <div key={addon.name} className="bg-white rounded-xl p-4 sm:p-5 border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                 <div>
                   <h3 className="font-bold text-slate-800 mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{addon.name}</h3>
                   <p className="text-slate-500 text-sm">{addon.desc}</p>
                 </div>
-                <div className="text-right flex-shrink-0">
-                  <p className="font-bold text-blue-700" style={{ fontFamily: 'Sora, sans-serif' }}>{addon.price}</p>
+                <div className="sm:text-right flex-shrink-0">
+                  <p className="font-bold text-blue-700 text-sm sm:text-base" style={{ fontFamily: 'Sora, sans-serif' }}>{addon.price}</p>
                 </div>
               </div>
             ))}
@@ -253,16 +254,16 @@ export default function Pricing() {
               { label: "Transparency", score: 8 },
               { label: "Add-on Value", score: 8 },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-4 mb-3">
-                <span className="text-slate-600 text-sm w-44 flex-shrink-0">{item.label}</span>
+              <div key={item.label} className="flex items-center gap-2 sm:gap-4 mb-3">
+                <span className="text-slate-600 text-xs sm:text-sm w-28 sm:w-44 flex-shrink-0 leading-tight">{item.label}</span>
                 <div className="flex-1 bg-slate-200 rounded-full h-2">
                   <div
                     className="h-2 rounded-full"
                     style={{ width: `${item.score * 10}%`, background: 'oklch(0.55 0.22 148)' }}
                   />
                 </div>
-                <span className="text-slate-800 font-bold text-sm w-8">{item.score}/10</span>
-                <div className="flex">
+                <span className="text-slate-800 font-bold text-xs sm:text-sm w-10 flex-shrink-0">{item.score}/10</span>
+                <div className="hidden sm:flex">
                   {[1,2,3,4,5].map(i => (
                     <Star key={i} className={`w-3 h-3 ${i <= Math.round(item.score / 2) ? 'fill-amber-400 text-amber-400' : 'text-slate-300'}`} />
                   ))}

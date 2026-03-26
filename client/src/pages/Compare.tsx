@@ -85,20 +85,20 @@ export default function Compare() {
     <div>
       {/* Hero */}
       <Breadcrumb items={[{label: "Tide vs Competitors"}]} />
-      <section className="py-14" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
+      <section className="py-10 lg:py-14" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container text-center">
-          <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Head-to-Head Comparison</span>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Tide vs Starling vs Monzo vs Revolut:<br />
-            <span className="text-emerald-400">Best UK Business Bank 2026</span>
+          <span className="text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Head-to-Head Comparison</span>
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4 px-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+            Tide vs Starling vs Monzo vs Revolut
+            <span className="block text-emerald-400 mt-1">Best UK Business Bank 2026</span>
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-6 px-2">
             We've compared every major feature of the four leading UK digital business banks so you can make the right choice for your business.
           </p>
-          <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3">
-            <span className="text-slate-300 text-sm">Tide exclusive code:</span>
-            <span className="font-mono font-black text-emerald-400 text-lg">REFER200</span>
-            <span className="text-slate-300 text-sm">→ up to</span>
+          <div className="inline-flex flex-wrap justify-center items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm">
+            <span className="text-slate-300">Tide exclusive code:</span>
+            <span className="font-mono font-black text-emerald-400 text-base">REFER200</span>
+            <span className="text-slate-300">→ up to</span>
             <span className="text-white font-bold">£200 free cash</span>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function Compare() {
           <h2 className="text-2xl font-black text-center mb-8" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>
             Overall Scores at a Glance
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 max-w-4xl mx-auto">
             {overallScores.map((b) => (
               <div
                 key={b.bank}
@@ -121,9 +121,9 @@ export default function Compare() {
                   </div>
                 )}
                 <div className={`h-1.5 bg-gradient-to-r ${b.color}`} />
-                <div className="p-5 text-center">
-                  <p className="font-black text-lg mb-1" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>{b.bank}</p>
-                  <p className="text-4xl font-black mb-1" style={{ fontFamily: 'Sora, sans-serif', color: b.highlight ? 'oklch(0.45 0.20 148)' : 'oklch(0.35 0.16 262)' }}>{b.score}</p>
+                <div className="p-3 sm:p-5 text-center">
+                  <p className="font-black text-sm sm:text-lg mb-1" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>{b.bank}</p>
+                  <p className="text-3xl sm:text-4xl font-black mb-1" style={{ fontFamily: 'Sora, sans-serif', color: b.highlight ? 'oklch(0.45 0.20 148)' : 'oklch(0.35 0.16 262)' }}>{b.score}</p>
                   <div className="flex justify-center mb-2">
                     {[1,2,3,4,5].map(i => (
                       <Star key={i} className={`w-3.5 h-3.5 ${i <= Math.round(b.score / 2) ? 'fill-amber-400 text-amber-400' : 'text-slate-200'}`} />
@@ -207,16 +207,16 @@ export default function Compare() {
 
           {/* Tide */}
           <div className="rounded-2xl border-2 border-emerald-200 overflow-hidden mb-6 shadow-md">
-            <div className="p-5 flex items-center justify-between" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
-              <div>
+            <div className="p-4 sm:p-5 flex items-center justify-between gap-3" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
+              <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <Trophy className="w-5 h-5 text-emerald-400" />
-                  <span className="text-emerald-400 text-sm font-bold uppercase tracking-wider">Our Top Pick</span>
+                  <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0" />
+                  <span className="text-emerald-400 text-xs sm:text-sm font-bold uppercase tracking-wider">Our Top Pick</span>
                 </div>
-                <h3 className="text-white font-black text-2xl" style={{ fontFamily: 'Sora, sans-serif' }}>Tide Business</h3>
+                <h3 className="text-white font-black text-xl sm:text-2xl" style={{ fontFamily: 'Sora, sans-serif' }}>Tide Business</h3>
               </div>
-              <div className="text-right">
-                <p className="text-4xl font-black text-emerald-400" style={{ fontFamily: 'Sora, sans-serif' }}>9.2</p>
+              <div className="text-right flex-shrink-0">
+                <p className="text-3xl sm:text-4xl font-black text-emerald-400" style={{ fontFamily: 'Sora, sans-serif' }}>9.2</p>
                 <p className="text-slate-300 text-xs">Overall Score</p>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default function Compare() {
                 href={REFERRAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-primary inline-block px-6 py-3 rounded-xl font-bold no-underline text-sm"
+                className="cta-primary inline-block px-4 sm:px-6 py-3 rounded-xl font-bold no-underline text-sm w-full sm:w-auto text-center"
               >
                 Open Tide Account — Code: REFER200 (£200 Free) →
               </a>
@@ -248,10 +248,10 @@ export default function Compare() {
 
           {/* Starling */}
           <div className="rounded-2xl border border-slate-100 overflow-hidden mb-6 shadow-sm">
-            <div className="p-5 flex items-center justify-between bg-gradient-to-r from-violet-600 to-violet-800">
-              <h3 className="text-white font-black text-xl" style={{ fontFamily: 'Sora, sans-serif' }}>Starling Business</h3>
-              <div className="text-right">
-                <p className="text-3xl font-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>8.7</p>
+            <div className="p-4 sm:p-5 flex items-center justify-between gap-3 bg-gradient-to-r from-violet-600 to-violet-800">
+              <h3 className="text-white font-black text-lg sm:text-xl min-w-0" style={{ fontFamily: 'Sora, sans-serif' }}>Starling Business</h3>
+              <div className="text-right flex-shrink-0">
+                <p className="text-2xl sm:text-3xl font-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>8.7</p>
                 <p className="text-violet-200 text-xs">Overall Score</p>
               </div>
             </div>
@@ -275,10 +275,10 @@ export default function Compare() {
 
           {/* Monzo */}
           <div className="rounded-2xl border border-slate-100 overflow-hidden mb-6 shadow-sm">
-            <div className="p-5 flex items-center justify-between bg-gradient-to-r from-rose-500 to-rose-700">
-              <h3 className="text-white font-black text-xl" style={{ fontFamily: 'Sora, sans-serif' }}>Monzo Business</h3>
-              <div className="text-right">
-                <p className="text-3xl font-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>8.1</p>
+            <div className="p-4 sm:p-5 flex items-center justify-between gap-3 bg-gradient-to-r from-rose-500 to-rose-700">
+              <h3 className="text-white font-black text-lg sm:text-xl min-w-0" style={{ fontFamily: 'Sora, sans-serif' }}>Monzo Business</h3>
+              <div className="text-right flex-shrink-0">
+                <p className="text-2xl sm:text-3xl font-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>8.1</p>
                 <p className="text-rose-200 text-xs">Overall Score</p>
               </div>
             </div>
@@ -302,10 +302,10 @@ export default function Compare() {
 
           {/* Revolut */}
           <div className="rounded-2xl border border-slate-100 overflow-hidden mb-10 shadow-sm">
-            <div className="p-5 flex items-center justify-between bg-gradient-to-r from-blue-600 to-blue-800">
-              <h3 className="text-white font-black text-xl" style={{ fontFamily: 'Sora, sans-serif' }}>Revolut Business</h3>
-              <div className="text-right">
-                <p className="text-3xl font-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>8.4</p>
+            <div className="p-4 sm:p-5 flex items-center justify-between gap-3 bg-gradient-to-r from-blue-600 to-blue-800">
+              <h3 className="text-white font-black text-lg sm:text-xl min-w-0" style={{ fontFamily: 'Sora, sans-serif' }}>Revolut Business</h3>
+              <div className="text-right flex-shrink-0">
+                <p className="text-2xl sm:text-3xl font-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>8.4</p>
                 <p className="text-blue-200 text-xs">Overall Score</p>
               </div>
             </div>
@@ -331,7 +331,7 @@ export default function Compare() {
           <h2 className="text-2xl font-black mb-6" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>
             Which Bank Should You Choose?
           </h2>
-          <div className="grid md:grid-cols-2 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {[
               { title: "Choose Tide if...", items: ["You need invoicing and accounting tools built in", "You want to register a limited company", "You take in-person card payments", "You want up to £200 free cash (code REFER200)", "You hold business reserves and want 4% AER savings"], color: "border-emerald-200 bg-emerald-50", titleColor: "text-emerald-700" },
               { title: "Choose Starling if...", items: ["You make many bank transfers each month", "You prefer a fully licensed bank", "You already use Xero or FreeAgent", "You don't need invoicing or VAT tools"], color: "border-violet-200 bg-violet-50", titleColor: "text-violet-700" },

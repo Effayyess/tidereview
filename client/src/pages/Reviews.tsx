@@ -84,14 +84,14 @@ export default function Reviews() {
     <div>
       {/* Hero */}
       <Breadcrumb items={[{label: "Customer Reviews"}]} />
-      <section className="py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
+      <section className="py-10 lg:py-16" style={{ background: 'linear-gradient(135deg, oklch(0.22 0.08 262), oklch(0.30 0.12 262))' }}>
         <div className="container text-center">
-          <span className="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Customer Reviews</span>
-          <h1 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Tide Bank Reviews &<br />
-            <span className="text-emerald-400">Trustpilot Ratings 2026</span>
+          <span className="text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Customer Reviews</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-2 mb-4 px-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+            Tide Bank Reviews &amp;
+            <span className="block text-emerald-400">Trustpilot Ratings 2026</span>
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto px-2">
             What do real Tide customers think? We've analysed over 32,000 Trustpilot reviews to give you the most comprehensive picture of Tide's customer satisfaction.
           </p>
         </div>
@@ -107,16 +107,16 @@ export default function Reviews() {
                   <Star className="w-4 h-4 fill-emerald-500" />
                   Trustpilot Verified Reviews
                 </div>
-                <div className="flex items-center gap-4 mb-4 justify-center md:justify-start">
-                  <p className="text-7xl font-black" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>4.4</p>
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 justify-center md:justify-start">
+                  <p className="text-5xl sm:text-7xl font-black" style={{ fontFamily: 'Sora, sans-serif', color: 'oklch(0.22 0.08 262)' }}>4.4</p>
                   <div>
                     <div className="flex mb-1">
                       {[1,2,3,4,5].map(i => (
-                        <Star key={i} className={`w-7 h-7 ${i <= 4 ? 'fill-amber-400 text-amber-400' : 'text-slate-200'}`} />
+                        <Star key={i} className={`w-5 h-5 sm:w-7 sm:h-7 ${i <= 4 ? 'fill-amber-400 text-amber-400' : 'text-slate-200'}`} />
                       ))}
                     </div>
-                    <p className="text-slate-600 font-bold text-lg" style={{ fontFamily: 'Sora, sans-serif' }}>Excellent</p>
-                    <p className="text-slate-400 text-sm">Based on 32,660+ reviews</p>
+                    <p className="text-slate-600 font-bold text-base sm:text-lg" style={{ fontFamily: 'Sora, sans-serif' }}>Excellent</p>
+                    <p className="text-slate-400 text-xs sm:text-sm">Based on 32,660+ reviews</p>
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -137,7 +137,7 @@ export default function Reviews() {
                 <h3 className="font-bold text-slate-700 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>Rating Breakdown</h3>
                 {ratingBreakdown.map((item) => (
                   <div key={item.stars} className="flex items-center gap-3">
-                    <div className="flex items-center gap-1 w-20 flex-shrink-0">
+                    <div className="flex items-center gap-0.5 w-16 sm:w-20 flex-shrink-0">
                       {Array.from({ length: item.stars }).map((_, i) => (
                         <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                       ))}
@@ -174,16 +174,16 @@ export default function Reviews() {
             </h2>
             <p className="text-slate-500 mt-2">84% of Tide's Trustpilot reviews are 4 or 5 stars</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto">
             {positiveReviews.map((review) => (
               <div key={review.name} className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex">
+                <div className="flex items-center justify-between mb-3 gap-2">
+                  <div className="flex flex-shrink-0">
                     {Array.from({ length: review.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-slate-400 text-xs">{review.date}</span>
+                  <span className="text-slate-400 text-xs truncate">{review.date}</span>
                 </div>
                 <div className="relative mb-3">
                   <Quote className="w-5 h-5 text-slate-200 absolute -top-1 -left-1" />
